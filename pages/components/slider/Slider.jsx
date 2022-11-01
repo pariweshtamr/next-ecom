@@ -6,7 +6,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { SliderProducts } from "../../../public/data/products"
-import Image from "next/image"
+import ProductsCard from "../productCard/productsCard"
 
 const Slider = () => {
   return (
@@ -23,22 +23,7 @@ const Slider = () => {
       >
         {SliderProducts.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="left-s">
-              <div className="name">
-                <span>{slide.name}</span>
-                <span>{slide.detail}</span>
-              </div>
-
-              <span>${slide.price}</span>
-              <div>Shop Now</div>
-            </div>
-            <Image
-              src={slide.img}
-              alt="slider-product"
-              className="img-product"
-              width="200"
-              height="200"
-            />
+            <ProductsCard prod={slide} />
           </SwiperSlide>
         ))}
       </Swiper>

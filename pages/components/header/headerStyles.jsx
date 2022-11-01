@@ -9,6 +9,7 @@ export const HeaderStyles = styled.div`
     align-items: center;
     gap: 1rem;
     flex: 1;
+    opacity: 87%;
 
     img {
       width: 2.5rem;
@@ -29,10 +30,11 @@ export const HeaderStyles = styled.div`
       gap: 2rem;
       font-weight: 500;
       list-style: none;
+      opacity: 87%;
 
       li {
         &:hover {
-          color: #fe956f;
+          color: #b91372;
           cursor: pointer;
         }
       }
@@ -44,11 +46,13 @@ export const HeaderStyles = styled.div`
     outline: none;
     border: none;
     border-radius: 50px;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.87);
   }
 
   .header-cart {
     width: 1.5rem;
     height: 1.5rem;
+    cursor: pointer;
   }
 `

@@ -15,6 +15,7 @@ export const HeroStyles = styled.div`
       width: min-content;
       display: block;
       font-weight: 600;
+      opacity: 87%;
     }
 
     .hero-text2 {
@@ -25,10 +26,12 @@ export const HeroStyles = styled.div`
       > :first-child {
         font-weight: 800;
         font-size: 2.5rem;
+        opacity: 87%;
       }
 
       > :last-child {
         display: block;
+        opacity: 60%;
       }
     }
 
@@ -40,6 +43,10 @@ export const HeroStyles = styled.div`
       > :first-child {
         font-weight: 800;
         font-size: 2.5rem;
+        opacity: 87%;
+      }
+      > :nth-child(2) {
+        opacity: 60%;
       }
     }
 
@@ -51,6 +58,10 @@ export const HeroStyles = styled.div`
       > :first-child {
         font-weight: 800;
         font-size: 2.5rem;
+        opacity: 87%;
+      }
+      > :nth-child(2) {
+        opacity: 60%;
       }
     }
   }
@@ -107,7 +118,7 @@ export const HeroStyles = styled.div`
         display: flex;
         gap: 1rem;
         align-items: center;
-        background: white;
+        background: rgba(255, 255, 255, 0.87);
         padding: 10px;
         font-size: 0.8rem;
         border-radius: 15px;

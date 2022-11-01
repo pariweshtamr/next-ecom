@@ -2,6 +2,7 @@ import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
+import Products from "./components/products/Products"
 import Slider from "./components/slider/Slider"
 import TryFit from "./components/tryFit/tryFit"
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Hero />
       <Slider />
       <TryFit />
+      <Products />
     </div>
   )
 }

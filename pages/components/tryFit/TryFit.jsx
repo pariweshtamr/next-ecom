@@ -16,8 +16,9 @@ const TryFit = () => {
       </div>
       <div className="try-right">
         <div className="wrapper">
-          <video src="img/nike.mp4"></video>
-          sdsd
+          <video width="450" height="350" controls>
+            <source src="/img/nike.mp4" type="vide/mp4" />
+          </video>
         </div>
       </div>
     </TryFitStyles>
