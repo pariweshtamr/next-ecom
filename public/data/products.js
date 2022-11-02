@@ -15,6 +15,9 @@ import img14 from "../img/img14.png"
 import img15 from "../img/img15.png"
 import img16 from "../img/img16.png"
 import img17 from "../img/img17.png"
+import slider1 from "../img/slider1.png"
+import slider2 from "../img/slider2.png"
+import slider3 from "../img/slider3.png"
 
 export const SliderProducts = [
   {

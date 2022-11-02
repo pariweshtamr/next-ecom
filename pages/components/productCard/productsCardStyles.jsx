@@ -1,13 +1,14 @@
 import styled from "styled-components"
 
-export const ProductCardStyles = styled.div`
+export const ProductsCardStyles = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
+
   .img-product {
     transform: rotate(25deg);
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    width: 10rem;
+    height: auto;
   }
 
   .left-s {

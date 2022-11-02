@@ -1,9 +1,11 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
+import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
 import Products from "./components/products/Products"
 import Slider from "./components/slider/Slider"
+import Testimonials from "./components/testimonials/Testimonials"
 import TryFit from "./components/tryFit/tryFit"
 
 export default function Home() {
@@ -28,6 +30,8 @@ export default function Home() {
       <Slider />
       <TryFit />
       <Products />
+      <Testimonials />
+      <Footer />
     </div>
   )
 }

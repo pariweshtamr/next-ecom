@@ -18,7 +18,7 @@ export const ProductsStyles = styled.div`
 
   .products {
     display: grid;
-    width: 90%;
+    width: 100%;
     grid-template-columns: 20% auto;
 
     .menu {
@@ -39,14 +39,14 @@ export const ProductsStyles = styled.div`
 
     .list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
       height: 30rem;
       overflow-y: scroll;
-      grid-gap: 2rem;
-      padding: 0 2rem 0 0;
+      grid-gap: 1rem;
+      padding: 0 1rem 0 0;
 
       .product {
-        width: 22.5rem;
+        width: 21rem;
         height: 12rem;
         background: rgba(255, 255, 255, 0.87);
         border-radius: 10px;
@@ -57,7 +57,6 @@ export const ProductsStyles = styled.div`
 
         > div {
           position: relative;
-
           .left-s {
             .name {
               > :nth-child(1) {
@@ -67,11 +66,11 @@ export const ProductsStyles = styled.div`
           }
 
           .img-product {
-            width: 10rem;
+            position: absolute;
+            width: 9.5rem;
             height: auto;
-            top: -1rem;
-            left: 9rem;
-            width: 12rem;
+            top: 0rem;
+            left: 9.5rem;
             transform: rotate(0);
           }
         }

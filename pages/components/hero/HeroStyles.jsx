@@ -79,24 +79,20 @@ export const HeroStyles = styled.div`
       /* z-index: -1; */
       position: absolute;
       bottom: 0;
-      /* background: linear-gradient(135.74deg, #0bb5ff 14.09%, #6dd3fe 83.81%); */
       background: linear-gradient(#b91372, #6b0f1a);
     }
 
     .hero-img {
-      width: 25rem;
+      width: 29rem;
       height: auto;
       position: absolute;
-      bottom: 0%;
-      right: 27%;
-      /* right: 27%;
-      transform: translateY(-50%, -50%); */
+      bottom: 0;
     }
 
     .hero-cart {
       position: absolute;
       bottom: 25%;
-      right: 1%;
+      right: 0;
       display: flex;
       align-items: center;
       gap: 1rem;

@@ -23,10 +23,10 @@ const Hero = () => {
       <div className="hero-img-wrapper">
         <div className="circle"></div>
         <Image
-          src="/img/hero.png"
+          src="/img/herobg.png"
           alt="hero"
-          width="100"
-          height="150"
+          width="2000"
+          height="1994"
           className="hero-img"
         />
         <div className="hero-cart">

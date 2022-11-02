@@ -22,19 +22,28 @@ export const HeaderStyles = styled.div`
 
   .header-right {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
     .header-menu {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       font-weight: 500;
       list-style: none;
       opacity: 87%;
 
-      li {
+      > :nth-child(1) {
         &:hover {
           color: #b91372;
+          cursor: pointer;
+        }
+      }
+
+      > :nth-child(2) {
+        color: #b91372;
+        &:hover {
+          color: #fff;
+          opacity: 87%;
           cursor: pointer;
         }
       }

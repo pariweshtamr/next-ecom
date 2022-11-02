@@ -12,10 +12,8 @@ const Header = () => {
 
       <div className="header-right">
         <ul className="header-menu">
-          <li>Collections</li>
-          <li>New</li>
-          <li>On Sale</li>
-          <li>ENG</li>
+          <li>Sign in</li>
+          <li>Sign up</li>
         </ul>
         <input type="text" placeholder="Search..." className="header-search" />
 

@@ -10,6 +10,7 @@ export const SliderStyles = styled.div`
     .swiper-button-next,
     .swiper-button-prev {
       color: #fff;
+      opacity: 87%;
     }
 
     .swiper-button-prev {
@@ -22,11 +23,9 @@ export const SliderStyles = styled.div`
     .swiper-slide {
       background: rgba(255, 255, 255, 0.87);
       border-radius: 10px;
-      padding: 1rem;
+      padding: 1rem 0 1rem 1rem;
       color: var(--black);
       overflow: hidden;
-      position: relative;
-      display: flex;
     }
   }
 `

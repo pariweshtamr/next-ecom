@@ -17,7 +17,7 @@ const Slider = () => {
         className="mySwiper"
         loopFillGroupWithBlank={true}
         slidesPerView={3}
-        spaceBetween={40}
+        spaceBetween={30}
         slidesPerGroup={1}
         loop={true}
       >

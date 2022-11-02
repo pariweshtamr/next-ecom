@@ -1,9 +1,9 @@
 import Image from "next/image"
-import { ProductCardStyles } from "./productCardStyles"
+import { ProductsCardStyles } from "./productsCardStyles"
 
 const ProductsCard = ({ prod }) => {
   return (
-    <ProductCardStyles>
+    <ProductsCardStyles>
       <div className="left-s">
         <div className="name">
           <span>{prod.name}</span>
@@ -17,10 +17,10 @@ const ProductsCard = ({ prod }) => {
         src={prod.img}
         alt="slider-product"
         className="img-product"
-        width="200"
-        height="200"
+        width="800"
+        height="800"
       />
-    </ProductCardStyles>
+    </ProductsCardStyles>
   )
 }
 
