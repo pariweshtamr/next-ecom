@@ -22,8 +22,8 @@ import slider3 from "../img/slider3.png"
 export const SliderProducts = [
   {
     name: "NIKE",
-    detail: "Mercurial Indoor",
-    price: "250",
+    detail: "Mercurial Superfly",
+    price: "300",
     img: img17,
   },
   {

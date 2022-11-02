@@ -9,6 +9,11 @@ export const ProductsCardStyles = styled.div`
     transform: rotate(25deg);
     width: 10rem;
     height: auto;
+
+    @media screen and (min-width: 1801px) {
+      width: 14rem;
+      height: auto;
+    }
   }
 
   .left-s {

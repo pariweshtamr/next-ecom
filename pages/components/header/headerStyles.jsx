@@ -3,6 +3,11 @@ import styled from "styled-components"
 export const HeaderStyles = styled.div`
   padding: 1.5rem;
   display: flex;
+  position: relative;
+
+  @media screen and (max-width: 640px) {
+    padding: 1.5rem 0;
+  }
 
   .app-logo {
     display: flex;
@@ -25,12 +30,40 @@ export const HeaderStyles = styled.div`
     gap: 1.5rem;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 640px) {
+      position: absolute;
+      right: -0.5rem;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--black);
+      border-radius: 50px;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    @media screen and (max-width: 856px) {
+      gap: 1rem;
+    }
+
+    .header-bars {
+      display: none;
+      @media screen and (max-width: 640px) {
+        display: block;
+      }
+    }
     .header-menu {
       display: flex;
       gap: 1.5rem;
       font-weight: 500;
       list-style: none;
       opacity: 87%;
+
+      @media screen and (max-width: 640px) {
+        flex-direction: column;
+        margin-left: -2rem;
+        display: none;
+      }
 
       > :nth-child(1) {
         &:hover {
@@ -57,6 +90,12 @@ export const HeaderStyles = styled.div`
     border-radius: 50px;
     padding: 0.5rem 1rem;
     background: rgba(255, 255, 255, 0.87);
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
+    @media screen and (max-width: 856px) {
+      display: none;
+    }
   }
 
   .header-cart {

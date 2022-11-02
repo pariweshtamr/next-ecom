@@ -1,11 +1,15 @@
 import { ProductsStyles } from "./productsStyles"
 import Image from "next/image"
 import { ProductsData } from "../../../public/data/products"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProductsCard from "../productCard/productsCard"
 
 const Products = () => {
-  const [MenuProducts, setMenuProducts] = useState(ProductsData)
+  const [MenuProducts, setMenuProducts] = useState([])
+
+  useEffect(() => {
+    setMenuProducts(ProductsData)
+  }, [ProductsData])
 
   const filter = (type) => {
     if (type) {
@@ -16,7 +20,13 @@ const Products = () => {
   }
   return (
     <ProductsStyles>
-      <Image src="/img/plane.png" width={150} height={100} alt="plane"></Image>
+      <Image
+        src="/img/plane.png"
+        className="title-img"
+        width={150}
+        height={100}
+        alt="plane"
+      ></Image>
       <h1>Our Featured Products</h1>
 
       <div className="products">

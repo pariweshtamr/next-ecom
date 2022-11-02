@@ -7,11 +7,28 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { SliderProducts } from "../../../public/data/products"
 import ProductsCard from "../productCard/productsCard"
+import { useEffect, useState } from "react"
 
 const Slider = () => {
+  const [sliderProds, setSliderProds] = useState([])
+
+  useEffect(() => {
+    setSliderProds(SliderProducts)
+  }, [SliderProducts])
   return (
     <SliderStyles>
       <Swiper
+        breakpoints={{
+          856: {
+            slidesPerView: 3,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          0: {
+            slidesPerView: 1,
+          },
+        }}
         modules={[Pagination, Navigation]}
         navigation={true}
         className="mySwiper"

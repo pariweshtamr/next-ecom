@@ -6,6 +6,9 @@ export const TestimonialsStyles = styled.div`
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
+  @media screen and (max-width: 640px) {
+    padding: 4rem 0;
+  }
 
   .testimonials-top {
     display: grid;
@@ -13,8 +16,20 @@ export const TestimonialsStyles = styled.div`
     width: 100%;
     grid-template-columns: 1fr 2fr 1fr;
 
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+
+      > :nth-child(1) {
+        text-align: center;
+      }
+    }
+
     > :nth-child(3) {
       text-align: right;
+      @media screen and (max-width: 640px) {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
     }
 
     .t-container {
@@ -34,9 +49,15 @@ export const TestimonialsStyles = styled.div`
       }
     }
     img {
-      width: 25rem;
+      width: 30rem;
       height: auto;
       justify-self: center;
+      @media screen and (min-width: 1801px) {
+        width: 40rem;
+      }
+      @media screen and (max-width: 640px) {
+        width: 80vw;
+      }
     }
   }
 

@@ -1,8 +1,15 @@
 import { HeaderStyles } from "./headerStyles"
 import { CgShoppingBag } from "react-icons/cg"
+import { GoThreeBars } from "react-icons/go"
 import Image from "next/image"
+import { useState } from "react"
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
   return (
     <HeaderStyles>
       <div className="app-logo">
@@ -11,7 +18,13 @@ const Header = () => {
       </div>
 
       <div className="header-right">
-        <ul className="header-menu">
+        <div className="header-bars">
+          <GoThreeBars onClick={toggleMenu} />
+        </div>
+        <ul
+          className="header-menu"
+          style={{ display: showMenu ? "none" : "inherit" }}
+        >
           <li>Sign in</li>
           <li>Sign up</li>
         </ul>

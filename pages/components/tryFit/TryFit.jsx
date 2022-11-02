@@ -4,9 +4,9 @@ const TryFit = () => {
   return (
     <TryFitStyles>
       <div className="try-left">
-        <span>Virtual Try-On</span>
-        <span>Never buy the wrong shade again!</span>
-        <span>Try Now!</span>
+        <span>Latest Designs</span>
+        <span>The ultimate Nike Collection!</span>
+        <span>Buy Now!</span>
         <Image
           src="/img/shade.png"
           alt="shade"
@@ -16,8 +16,8 @@ const TryFit = () => {
       </div>
       <div className="try-right">
         <div className="wrapper">
-          <video width="450" height="350" controls>
-            <source src="/img/nike.mp4" type="vide/mp4" />
+          <video autoPlay={true} muted={true} loop>
+            <source src="/img/nike.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

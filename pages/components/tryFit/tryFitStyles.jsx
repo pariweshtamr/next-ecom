@@ -5,10 +5,20 @@ export const TryFitStyles = styled.div`
   padding: 2rem;
   display: flex;
   justify-content: space-around;
+  width: 100%;
+  @media screen and (max-width: 856px) {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
   .try-left {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     position: relative;
 
     > :nth-child(1) {
@@ -33,22 +43,34 @@ export const TryFitStyles = styled.div`
       position: absolute;
       width: 10rem;
       height: auto;
-      bottom: 2rem;
+      bottom: 0rem;
+      @media screen and (max-width: 856px) {
+        bottom: 2.5rem;
+      }
     }
   }
 
   .try-right {
-    display: block;
-    color: black;
-
+    display: flex;
+    align-items: center;
     .wrapper {
-      width: 30rem;
-      height: 18rem;
+      width: 26rem;
+      height: auto;
       overflow: hidden;
       border-radius: 20px;
 
+      @media screen and (max-width: 640px) {
+        width: 100%;
+      }
+
       video {
-        border-radius: 20px;
+        border-radius: 10px;
+        width: 100%;
+
+        source {
+          width: 100%;
+          margin: 0 auto;
+        }
       }
     }
   }

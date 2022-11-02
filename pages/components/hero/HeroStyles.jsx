@@ -5,6 +5,31 @@ export const HeroStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
 
+  @media screen and (max-width: 856px) {
+    grid-template-areas:
+      "left center center"
+      "right right right";
+    > :first-child {
+      grid-area: left;
+      grid-template-rows: none;
+      gap: 2rem;
+    }
+    > :nth-child(2) {
+      grid-area: center;
+    }
+    > :nth-child(3) {
+      grid-area: right;
+      display: flex !important;
+      justify-content: space-around;
+      margin: 2rem 0;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 0;
+    margin-bottom: -3rem;
+  }
+
   .hero-sides {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -16,6 +41,13 @@ export const HeroStyles = styled.div`
       display: block;
       font-weight: 600;
       opacity: 87%;
+      @media screen and (min-width: 1801px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 856px) {
+        font-size: 0.9rem;
+        text-align: justify;
+      }
     }
 
     .hero-text2 {
@@ -27,11 +59,33 @@ export const HeroStyles = styled.div`
         font-weight: 800;
         font-size: 2.5rem;
         opacity: 87%;
+        @media screen and (min-width: 1801px) {
+        font-size: 3rem;
+      }
+        @media screen and (max-width: 856px) {
+          font-size: 1.5rem;
+          text-align: left;
+        }
+        @media screen and (max-width: 640px) {
+          font-size: 1.2rem;
+          text-align: left;
+        }
       }
 
       > :last-child {
         display: block;
         opacity: 60%;
+        @media screen and (min-width: 1801px) {
+        font-size: 1.2rem;
+      }
+        @media screen and (max-width: 856px) {
+          font-size: 0.9rem;
+          text-align: justify;
+        }
+        @media screen and (max-width: 640px) {
+          font-size: 0.8rem;
+          text-align: left;
+        }
       }
     }
 
@@ -44,9 +98,26 @@ export const HeroStyles = styled.div`
         font-weight: 800;
         font-size: 2.5rem;
         opacity: 87%;
+        @media screen and (min-width: 1801px) {
+        font-size: 3rem;
+      }
+        @media screen and (max-width: 856px) {
+          font-size: 1.5rem;
+          text-align: left;
+        }
+        @media screen and (max-width: 640px) {
+          font-size: 1.2rem;
+          text-align: left;
+        }
       }
       > :nth-child(2) {
         opacity: 60%;
+        @media screen and (min-width: 1801px) {
+        font-size: 1.2rem;
+      }
+        @media screen and (max-width: 640px) {
+          font-size: .9rem;
+        }
       }
     }
 
@@ -59,9 +130,27 @@ export const HeroStyles = styled.div`
         font-weight: 800;
         font-size: 2.5rem;
         opacity: 87%;
+        @media screen and (min-width: 1801px) {
+        font-size: 3rem;
+      }
+        @media screen and (max-width: 856px) {
+          font-size: 1.5rem;
+          text-align: left;
+        }
+        @media screen and (max-width: 640px) {
+          font-size: 1.2rem;
+          text-align: right;
+        }
       }
       > :nth-child(2) {
         opacity: 60%;
+        @media screen and (min-width: 1801px) {
+        font-size: 1.2rem;
+      }
+        @media screen and (max-width: 640px) {
+          font-size: .9rem;
+        }
+      }
       }
     }
   }
@@ -76,26 +165,75 @@ export const HeroStyles = styled.div`
       width: 30rem;
       height: 30rem;
       border-radius: 50%;
-      /* z-index: -1; */
+      filter: blur(1px);
       position: absolute;
       bottom: 0;
       background: linear-gradient(#b91372, #6b0f1a);
+
+      @media screen and (min-width: 1801px) {
+        width: 35rem;
+      height: 35rem;
+      }
+
+      @media screen and (max-width: 856px) {
+        width: 70%;
+        height: 100%;
+        position: absolute;
+      }
+      @media screen and (max-width: 640px) {
+        top: 0;
+        width: 14rem;
+        height: 70%;
+      }
     }
 
     .hero-img {
-      width: 29rem;
+      width: 45rem;
       height: auto;
       position: absolute;
-      bottom: 0;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      @media screen and (min-width: 1801px) {
+        width: 55rem;
+        left: 11%;
+      }
+      
+      @media screen and (max-width: 856px) {
+        left: 2%;
+        width: 100%;
+        height: auto;
+      }
+      @media screen and (max-width: 640px) {
+        top: 35%;
+        left: -1.8rem;
+        width: 18rem;
+        height: auto;
+      }
     }
 
     .hero-cart {
       position: absolute;
-      bottom: 25%;
+      bottom: 15%;
       right: 0;
       display: flex;
       align-items: center;
       gap: 1rem;
+
+      @media screen and (min-width: 1801px) {
+        transform: scale(1.5);
+      }
+
+      @media screen and (max-width: 856px) {
+        bottom: -0.5rem;
+        right: 0rem;
+        transform: scale(0.9);
+      }
+
+      @media screen and (max-width: 640px) {
+        transform: scale(0.7);
+        bottom: 10%;
+      }
 
       .svg1 {
         width: 50px;

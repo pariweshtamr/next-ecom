@@ -15,9 +15,9 @@ const Testimonials = () => {
         </div>
 
         <Image
-          src="/img/testimonialHero.png"
-          width="1000"
-          height="1000"
+          src="/img/herobg.png"
+          width="1100"
+          height="1100"
           alt="testimonial-img"
         ></Image>
 
@@ -35,9 +35,23 @@ const Testimonials = () => {
           slidesPerGroup={1}
           spaceBetween={20}
           className="t-swiper"
+          breakpoints={{
+            1400: {
+              slidesPerView: 4,
+            },
+            856: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
         >
           {TestimonialsData.map((testimonial, i) => (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <div className="testimonial">
                 <Image src={testimonial.image} alt="profile"></Image>
                 <span>{testimonial.comment}</span>

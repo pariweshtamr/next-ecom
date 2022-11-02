@@ -35,6 +35,10 @@ a {
   flex-direction: column;
 }
 
+.container {
+  padding: 0 2rem;
+}
+
 ::-webkit-scrollbar {
   height: 12px;
   width: 12px;

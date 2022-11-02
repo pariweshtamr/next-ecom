@@ -1,9 +1,10 @@
 import { HeroStyles } from "./HeroStyles"
 import { RiShoppingBagFill } from "react-icons/ri"
 import { BsArrowRight } from "react-icons/bs"
-import Image from "next/image"
+import { motion } from "framer-motion"
 
 const Hero = () => {
+  const transition = { duration: 3, type: "spring" }
   return (
     <HeroStyles>
       {/* Left side */}
@@ -21,15 +22,28 @@ const Hero = () => {
 
       {/* middle */}
       <div className="hero-img-wrapper">
-        <div className="circle"></div>
-        <Image
-          src="/img/herobg.png"
+        <motion.div
+          transition={transition}
+          initial={{ bottom: "2rem" }}
+          whileInView={{ bottom: "0" }}
+          className="circle"
+        ></motion.div>
+
+        <motion.img
+          transition={transition}
+          initial={{ bottom: "-2rem" }}
+          whileInView={{ bottom: "0" }}
+          src="/img/2.png"
           alt="hero"
-          width="2000"
-          height="1994"
           className="hero-img"
         />
-        <div className="hero-cart">
+
+        <motion.div
+          transition={transition}
+          initial={{ right: "4%" }}
+          whileInView={{ right: "2%" }}
+          className="hero-cart"
+        >
           <div className="svg1">
             <RiShoppingBagFill />
           </div>
@@ -40,7 +54,7 @@ const Hero = () => {
               <BsArrowRight />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* right-side */}

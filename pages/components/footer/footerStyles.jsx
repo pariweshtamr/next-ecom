@@ -19,12 +19,24 @@ export const FooterStyles = styled.footer`
     display: flex;
     width: 100%;
     margin-top: 2rem;
-
     justify-content: space-around;
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+    @media screen and (max-width: 640px) {
+      justify-content: center;
+    }
     .footer-logo {
       display: flex;
       align-items: flex-start;
       gap: 1rem;
+
+      @media screen and (max-width: 856px) {
+        display: none;
+      }
 
       img {
         width: 2.5rem;
