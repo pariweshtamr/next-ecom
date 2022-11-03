@@ -18,8 +18,19 @@ const LoginForm = () => {
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input id="password" type="password" />
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter you password"
+            />
           </div>
+
+          <span className="form-text">
+            By Continuing, I agree to Next Store's <span>Privacy Poicy</span>{" "}
+            and <span>Terms of Use.</span>
+          </span>
+
+          <button type="submit">Sign In</button>
         </form>
       </div>
     </LoginFormStyles>

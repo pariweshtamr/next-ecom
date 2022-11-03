@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const LoginFormStyles = styled.div`
+export const RegisterFormStyles = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 2rem 0;
@@ -32,8 +32,14 @@ export const LoginFormStyles = styled.div`
       gap: 1rem;
       .form-group {
         display: flex;
+        gap: 1rem;
+        width: 100%;
+      }
+      .form-group-content {
+        display: flex;
         flex-direction: column;
         position: relative;
+        width: 100%;
 
         label {
           font-size: 1rem;

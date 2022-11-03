@@ -1,6 +1,7 @@
 import { HeaderStyles } from "./headerStyles"
 import { CgShoppingBag } from "react-icons/cg"
 import { GoThreeBars } from "react-icons/go"
+import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -25,8 +26,12 @@ const Header = () => {
           className="header-menu"
           style={{ display: showMenu ? "none" : "inherit" }}
         >
-          <li>Sign in</li>
-          <li>Sign up</li>
+          <li>
+            <Link href="/login">Sign in</Link>
+          </li>
+          <li>
+            <Link href="/register">Sign up</Link>
+          </li>
         </ul>
         <input type="text" placeholder="Search..." className="header-search" />
 
