@@ -80,6 +80,16 @@ export const HeaderStyles = styled.div`
           cursor: pointer;
         }
       }
+
+      .logout-btn {
+        color: #b91372;
+
+        &:hover {
+          color: #fff;
+          opacity: 87%;
+          cursor: pointer;
+        }
+      }
     }
   }
 

@@ -4,12 +4,27 @@ import { GoThreeBars } from "react-icons/go"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-
+import { signOut } from "firebase/auth"
+import { auth } from "../../../firebase/firebase-config"
+import { toast } from "react-toastify"
+import { useRouter } from "next/router"
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
+  const router = useRouter()
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
+  }
+
+  const logoutUser = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout Successful.")
+        router.push("/login")
+      })
+      .catch((error) => {
+        toast.error(error.message)
+      })
   }
   return (
     <HeaderStyles>
@@ -31,6 +46,12 @@ const Header = () => {
           </li>
           <li>
             <Link href="/register">Sign up</Link>
+          </li>
+          <li>
+            <Link href="/profile">My Profile</Link>
+          </li>
+          <li onClick={logoutUser} className="logout-btn">
+            Logout
           </li>
         </ul>
         <input type="text" placeholder="Search..." className="header-search" />

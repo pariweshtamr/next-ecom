@@ -5,12 +5,19 @@ export const LoginFormStyles = styled.div`
   height: 100vh;
   padding: 2rem 0;
   opacity: 87%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login {
+    width: 28%;
+  }
 
   .form-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 28%;
+    width: 100%;
     margin: 0 auto;
     .app-logo {
       display: flex;
@@ -63,14 +70,52 @@ export const LoginFormStyles = styled.div`
         }
       }
 
-      button {
+      .btn {
         padding: 1.2rem;
         border-radius: 50px;
         border: none;
         outline: none;
         background: linear-gradient(#b91372, #6b0f1a);
         color: #fff;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.5s ease;
+        }
       }
+    }
+  }
+
+  .or {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .google-btn {
+    padding: 1.2rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.5s ease;
+    }
+  }
+
+  .reg-btn {
+    text-align: center;
+    margin: 1rem 0;
+    span {
+      color: #b91372;
+      text-decoration: underline;
     }
   }
 `

@@ -56,6 +56,7 @@ export default class MyDocument extends Document {
           ></link>
         </Head>
         <body>
+          <div id="loader"></div>
           <Main />
           <NextScript />
         </body>

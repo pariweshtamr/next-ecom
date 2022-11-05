@@ -76,6 +76,13 @@ export const RegisterFormStyles = styled.div`
         outline: none;
         background: linear-gradient(#b91372, #6b0f1a);
         color: #fff;
+        cursor: pointer;
+        transition: 0.5s all ease;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.5s all ease;
+        }
       }
     }
   }

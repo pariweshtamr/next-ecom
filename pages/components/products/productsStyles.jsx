@@ -89,7 +89,7 @@ export const ProductsStyles = styled.div`
       grid-gap: 2rem;
       padding: 0 1rem 0 0;
       @media screen and (min-width: 857px) {
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
         overflow-x: hidden;
       }
       @media screen and (max-width: 856px) {
@@ -112,7 +112,7 @@ export const ProductsStyles = styled.div`
         overflow: hidden;
         color: var(--black);
         @media screen and (min-width: 857px) {
-          width: 20rem;
+          width: 25rem;
           height: 11rem;
         }
         @media screen and (max-width: 856px) {

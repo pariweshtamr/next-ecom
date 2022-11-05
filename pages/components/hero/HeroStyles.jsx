@@ -60,8 +60,8 @@ export const HeroStyles = styled.div`
         font-size: 2.5rem;
         opacity: 87%;
         @media screen and (min-width: 1801px) {
-        font-size: 3rem;
-      }
+          font-size: 3rem;
+        }
         @media screen and (max-width: 856px) {
           font-size: 1.5rem;
           text-align: left;
@@ -76,8 +76,8 @@ export const HeroStyles = styled.div`
         display: block;
         opacity: 60%;
         @media screen and (min-width: 1801px) {
-        font-size: 1.2rem;
-      }
+          font-size: 1.2rem;
+        }
         @media screen and (max-width: 856px) {
           font-size: 0.9rem;
           text-align: justify;
@@ -99,8 +99,8 @@ export const HeroStyles = styled.div`
         font-size: 2.5rem;
         opacity: 87%;
         @media screen and (min-width: 1801px) {
-        font-size: 3rem;
-      }
+          font-size: 3rem;
+        }
         @media screen and (max-width: 856px) {
           font-size: 1.5rem;
           text-align: left;
@@ -113,10 +113,10 @@ export const HeroStyles = styled.div`
       > :nth-child(2) {
         opacity: 60%;
         @media screen and (min-width: 1801px) {
-        font-size: 1.2rem;
-      }
+          font-size: 1.2rem;
+        }
         @media screen and (max-width: 640px) {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -131,8 +131,8 @@ export const HeroStyles = styled.div`
         font-size: 2.5rem;
         opacity: 87%;
         @media screen and (min-width: 1801px) {
-        font-size: 3rem;
-      }
+          font-size: 3rem;
+        }
         @media screen and (max-width: 856px) {
           font-size: 1.5rem;
           text-align: left;
@@ -145,12 +145,11 @@ export const HeroStyles = styled.div`
       > :nth-child(2) {
         opacity: 60%;
         @media screen and (min-width: 1801px) {
-        font-size: 1.2rem;
-      }
-        @media screen and (max-width: 640px) {
-          font-size: .9rem;
+          font-size: 1.2rem;
         }
-      }
+        @media screen and (max-width: 640px) {
+          font-size: 0.9rem;
+        }
       }
     }
   }
@@ -172,7 +171,7 @@ export const HeroStyles = styled.div`
 
       @media screen and (min-width: 1801px) {
         width: 35rem;
-      height: 35rem;
+        height: 35rem;
       }
 
       @media screen and (max-width: 856px) {
@@ -196,9 +195,13 @@ export const HeroStyles = styled.div`
       transform: translateY(-50%);
       @media screen and (min-width: 1801px) {
         width: 55rem;
-        left: 11%;
+        left: 20%;
       }
-      
+
+      @media screen and (min-width: 856px) and (max-width: 1800px) {
+        left: 15%;
+        height: auto;
+      }
       @media screen and (max-width: 856px) {
         left: 2%;
         width: 100%;

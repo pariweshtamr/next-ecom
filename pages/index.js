@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Online SHopping for best Soccer Cleats - Next Store</title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Online Shopping for best Soccer Cleats - Next Store</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
