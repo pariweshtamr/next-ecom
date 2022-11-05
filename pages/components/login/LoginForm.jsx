@@ -12,11 +12,15 @@ import Loader from "../loader/Loader"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import { FaGoogle } from "react-icons/fa"
+import { useDispatch } from "react-redux"
+import { loginSuccess } from "../../../redux/slice/authSlice"
 
 const LoginForm = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch()
+
   const router = useRouter()
 
   const loginUser = (e) => {
@@ -29,7 +33,15 @@ const LoginForm = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user
-        console.log(user)
+
+        user &&
+          dispatch(
+            loginSuccess({
+              email: user.email,
+              username: user.displayName,
+              userId: user.uid,
+            })
+          )
         user.uid && router.push("/")
         setIsLoading(false)
       })

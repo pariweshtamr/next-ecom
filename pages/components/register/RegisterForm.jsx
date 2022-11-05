@@ -34,12 +34,12 @@ const RegisterForm = () => {
         console.log(user)
       })
       .catch((error) => {
+        setIsLoading(false)
         let message
         if (error.message.includes("auth/email-already-in-use")) {
           message = "User already exists!"
         }
         toast.error(message)
-        setIsLoading(false)
       })
   }
   return (
