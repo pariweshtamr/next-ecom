@@ -79,9 +79,18 @@ export const LoginFormStyles = styled.div`
         color: #fff;
         transition: all 0.5s ease;
         cursor: pointer;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+
+        span {
+          font-size: 1rem;
+        }
         &:hover {
-          transform: scale(1.1);
           transition: all 0.5s ease;
+          gap: 1rem;
         }
       }
     }

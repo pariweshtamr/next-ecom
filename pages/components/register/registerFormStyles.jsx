@@ -78,12 +78,30 @@ export const RegisterFormStyles = styled.div`
         color: #fff;
         cursor: pointer;
         transition: 0.5s all ease;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+
+        span {
+          font-size: 1rem;
+        }
 
         &:hover {
-          transform: scale(1.1);
           transition: 0.5s all ease;
+          gap: 1rem;
         }
       }
+    }
+  }
+
+  .log-btn {
+    text-align: center;
+    margin: 1rem 0;
+    span {
+      color: #b91372;
+      text-decoration: underline;
     }
   }
 `

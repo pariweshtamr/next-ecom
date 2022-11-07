@@ -5,6 +5,7 @@ import { toast } from "react-toastify"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth } from "../../../firebase/firebase-config"
 import Loader from "../loader/Loader"
+import Link from "next/link"
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("")
@@ -111,8 +112,17 @@ const RegisterForm = () => {
             and <span>Terms of Use.</span>
           </span>
 
-          <button type="submit">Sign Up</button>
+          <button type="submit">
+            Sign Up <span>&#62;</span>
+          </button>
         </form>
+      </div>
+
+      <div className="log-btn">
+        Already have an account?{" "}
+        <span>
+          <Link href="/login">Sign in</Link>
+        </span>
       </div>
     </RegisterFormStyles>
   )

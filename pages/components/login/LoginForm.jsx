@@ -115,7 +115,7 @@ const LoginForm = () => {
             </span>
 
             <button className="btn" type="submit">
-              Sign In
+              Sign In <span>&#62;</span>
             </button>
           </form>
         </div>
@@ -123,7 +123,8 @@ const LoginForm = () => {
         <div className="or">-- OR --</div>
 
         <button className="google-btn" onClick={signInWithGoogle}>
-          <FaGoogle /> <span>Sign in with Google</span>
+          <FaGoogle />
+          <span>Sign in with Google</span>
         </button>
 
         <div className="reg-btn">
