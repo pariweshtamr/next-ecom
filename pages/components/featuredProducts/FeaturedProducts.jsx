@@ -5,18 +5,29 @@ import { useEffect, useState } from "react"
 import ProductsCard from "../productCard/productsCard"
 import { db } from "../../../firebase/firebase-config"
 import { collection, getDocs } from "firebase/firestore"
+import { useDispatch, useSelector } from "react-redux"
+import { getProductsSuccess } from "../../../redux/slice/productSlice"
 
-const Products = () => {
-  const [MenuProducts, setMenuProducts] = useState([])
+const FeaturedProducts = () => {
+  const [menuProducts, setMenuProducts] = useState([])
+  const { products } = useSelector((state) => state.product)
+  const dispatch = useDispatch()
 
   const getProds = async () => {
     let prods = []
-    const querySnapshot = await getDocs(collection(db, "products"))
-    querySnapshot.forEach((doc) => {
-      prods.push(doc.data())
-      // doc.data() is never undefined for query doc snapshots
+    try {
+      const querySnapshot = await getDocs(collection(db, "products"))
+      querySnapshot.forEach((doc) => {
+        const { id } = doc
+        const data = { ...doc.data(), id }
+        prods.push(data)
+        // doc.data() is never undefined for query doc snapshots
+      })
       setMenuProducts(prods)
-    })
+      dispatch(getProductsSuccess(prods))
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
@@ -49,8 +60,8 @@ const Products = () => {
         </ul>
 
         <div className="list">
-          {MenuProducts?.map((product, i) => (
-            <div className="product" key={i}>
+          {menuProducts?.map((product) => (
+            <div className="product" key={product.id}>
               <ProductsCard prod={product} />
             </div>
           ))}
@@ -60,4 +71,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default FeaturedProducts

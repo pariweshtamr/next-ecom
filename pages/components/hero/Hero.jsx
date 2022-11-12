@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs"
 import { motion } from "framer-motion"
 
 const Hero = () => {
-  const transition = { duration: 3, type: "spring", stiffness: "100" }
+  const transition = { duration: 3, type: "spring", stiffness: 100 }
   return (
     <HeroStyles>
       {/* Left side */}

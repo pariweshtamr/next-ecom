@@ -1,8 +1,7 @@
 import Head from "next/head"
-import Footer from "./components/footer/Footer"
-import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
-import Products from "./components/products/Products"
+import MainLayout from "./components/mainLayout/MainLayout"
+import FeaturedProducts from "./components/featuredProducts/FeaturedProducts"
 import Slider from "./components/slider/Slider"
 import Testimonials from "./components/testimonials/Testimonials"
 import TryFit from "./components/tryFit/tryFit"
@@ -15,13 +14,13 @@ export default function Home() {
         <title>Online Shopping for best Soccer Cleats - Next Store</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <Hero />
-      <Slider />
-      <TryFit />
-      <Products />
-      <Testimonials />
-      <Footer />
+      <MainLayout>
+        <Hero />
+        <Slider />
+        <TryFit />
+        <FeaturedProducts />
+        <Testimonials />
+      </MainLayout>
     </div>
   )
 }

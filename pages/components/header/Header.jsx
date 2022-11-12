@@ -67,6 +67,9 @@ const Header = () => {
           {!userInfo.userId ? (
             <>
               <li>
+                <span>Collection</span>
+              </li>
+              <li>
                 <Link href="/login">Sign in</Link>
               </li>
               <li>
@@ -81,13 +84,16 @@ const Header = () => {
               <li>
                 <Link href="/profile">My Profile</Link>
               </li>
+              <li>
+                <Link href="/collection">Collection</Link>
+              </li>
               <li onClick={logoutUser} className="logout-btn">
                 Sign out
               </li>
             </>
           )}
         </ul>
-        <input type="text" placeholder="Search..." className="header-search" />
+        {/* <input type="text" placeholder="Search..." className="header-search" /> */}
 
         <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
       </div>
