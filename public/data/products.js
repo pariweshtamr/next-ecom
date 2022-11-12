@@ -8,8 +8,6 @@ import img7 from "../img/img7.png"
 import img8 from "../img/img8.png"
 import img9 from "../img/img9.png"
 import img10 from "../img/img10.png"
-import img11 from "../img/img11.png"
-import img12 from "../img/img12.png"
 import img13 from "../img/img13.png"
 import img14 from "../img/img14.png"
 import img15 from "../img/img15.png"
@@ -110,20 +108,7 @@ export const ProductsData = [
     img: img10,
     type: "outdoor",
   },
-  {
-    name: "ADIDAS",
-    detail: "Nourish your skin",
-    price: "12",
-    img: img11,
-    type: "outdoor",
-  },
-  {
-    name: "NIKE",
-    detail: "Nourish your skin",
-    price: "12",
-    img: img12,
-    type: "outdoor",
-  },
+
   {
     name: "NIKE",
     detail: "Nourish your skin",

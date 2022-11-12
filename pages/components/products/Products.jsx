@@ -3,7 +3,6 @@ import Image from "next/image"
 import { ProductsData } from "../../../public/data/products"
 import { useEffect, useState } from "react"
 import ProductsCard from "../productCard/productsCard"
-import { useCollection } from "react-firebase-hooks/firestore"
 import { db } from "../../../firebase/firebase-config"
 import { collection, getDocs } from "firebase/firestore"
 
@@ -11,16 +10,18 @@ const Products = () => {
   const [MenuProducts, setMenuProducts] = useState([])
 
   const getProds = async () => {
+    let prods = []
     const querySnapshot = await getDocs(collection(db, "products"))
-    querySnapshot.forEach((prod) => {
+    querySnapshot.forEach((doc) => {
+      prods.push(doc.data())
       // doc.data() is never undefined for query doc snapshots
-      console.log(prod.id, " => ", prod.data())
+      setMenuProducts(prods)
     })
   }
 
   useEffect(() => {
-    setMenuProducts(ProductsData)
-  }, [ProductsData])
+    getProds()
+  }, [])
 
   const filter = (type) => {
     if (type) {
