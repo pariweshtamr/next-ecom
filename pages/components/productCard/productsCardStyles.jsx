@@ -4,6 +4,7 @@ export const ProductsCardStyles = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 
   .img-product {
     transform: rotate(25deg);
@@ -20,7 +21,6 @@ export const ProductsCardStyles = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     > :nth-child(2) {
       font-size: 2rem;
       font-weight: bold;

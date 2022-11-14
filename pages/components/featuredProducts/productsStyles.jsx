@@ -104,7 +104,7 @@ export const ProductsStyles = styled.div`
 
       .product {
         width: 25rem;
-        height: 12rem;
+        height: 14rem;
         background: rgba(255, 255, 255, 0.87);
         border-radius: 10px;
         display: flex;
@@ -113,7 +113,7 @@ export const ProductsStyles = styled.div`
         color: var(--black);
         @media screen and (min-width: 857px) {
           width: 25rem;
-          height: 11rem;
+          height: 12rem;
         }
         @media screen and (max-width: 856px) {
           width: 20rem;

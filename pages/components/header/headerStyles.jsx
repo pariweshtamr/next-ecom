@@ -72,7 +72,8 @@ export const HeaderStyles = styled.div`
         }
       }
 
-      > :nth-child(2) {
+      > :nth-child(2),
+      > :nth-child(3) {
         color: #b91372;
         &:hover {
           color: #fff;

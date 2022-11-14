@@ -2,6 +2,7 @@ import { HeroStyles } from "./HeroStyles"
 import { RiShoppingBagFill } from "react-icons/ri"
 import { BsArrowRight } from "react-icons/bs"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 const Hero = () => {
   const transition = { duration: 3, type: "spring", stiffness: 100 }
@@ -48,12 +49,14 @@ const Hero = () => {
             <RiShoppingBagFill />
           </div>
 
-          <div className="hero-signup">
-            <span>Best Signup Offers!</span>
-            <div className="svg2">
-              <BsArrowRight />
+          <Link href="/collection">
+            <div className="hero-signup">
+              <span>Our Collection!</span>
+              <div className="svg2">
+                <BsArrowRight />
+              </div>
             </div>
-          </div>
+          </Link>
         </motion.div>
       </div>
 

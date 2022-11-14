@@ -7,32 +7,20 @@ import { db } from "../../../firebase/firebase-config"
 import { collection, getDocs } from "firebase/firestore"
 import { useDispatch, useSelector } from "react-redux"
 import { getProductsSuccess } from "../../../redux/slice/productSlice"
+import { fetchAllProducts } from "../../../redux/action/productAction"
 
 const FeaturedProducts = () => {
   const [menuProducts, setMenuProducts] = useState([])
+  const [shouldFetch, setShouldFetch] = useState(true)
+
   const { products } = useSelector((state) => state.product)
   const dispatch = useDispatch()
 
-  const getProds = async () => {
-    let prods = []
-    try {
-      const querySnapshot = await getDocs(collection(db, "products"))
-      querySnapshot.forEach((doc) => {
-        const { id } = doc
-        const data = { ...doc.data(), id }
-        prods.push(data)
-        // doc.data() is never undefined for query doc snapshots
-      })
-      setMenuProducts(prods)
-      dispatch(getProductsSuccess(prods))
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   useEffect(() => {
-    getProds()
-  }, [])
+    shouldFetch && dispatch(fetchAllProducts())
+    setShouldFetch(false)
+    setMenuProducts(products)
+  }, [dispatch, setShouldFetch, products])
 
   const filter = (type) => {
     if (type) {

@@ -15,6 +15,7 @@ import { logoutSuccess, setActiveUser } from "../../../redux/slice/authSlice"
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
   const { userInfo } = useSelector((state) => state.auth)
+  const router = useRouter()
   const dispatch = useDispatch()
 
   // Monitor currently signed In User
@@ -42,8 +43,8 @@ const Header = () => {
   const logoutUser = () => {
     signOut(auth)
       .then(() => {
-        dispatch(logoutSuccess())
-        toast.success("Logout Successful.")
+        dispatch(logoutSuccess()) && toast.success("Logout Successful.")
+        router.push("/")
       })
       .catch((error) => {
         toast.error(error.message)
@@ -53,7 +54,9 @@ const Header = () => {
     <HeaderStyles>
       <div className="app-logo">
         <Image src="/img/logo.png" alt="logo" width="100" height="100" />
-        <span>Next Store</span>
+        <Link href="/">
+          <span>Next Store</span>
+        </Link>
       </div>
 
       <div className="header-right">
