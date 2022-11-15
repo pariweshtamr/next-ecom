@@ -11,10 +11,12 @@ import { toast } from "react-toastify"
 import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
 import { logoutSuccess, setActiveUser } from "../../../redux/slice/authSlice"
+import { Badge } from "@mui/material"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
   const { userInfo } = useSelector((state) => state.auth)
+  const { totalQuantity } = useSelector((state) => state.cart)
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -70,7 +72,7 @@ const Header = () => {
           {!userInfo.userId ? (
             <>
               <li>
-                <span>Collection</span>
+                <Link href="/collection">Collection</Link>
               </li>
               <li>
                 <Link href="/login">Sign in</Link>
@@ -96,9 +98,9 @@ const Header = () => {
             </>
           )}
         </ul>
-        {/* <input type="text" placeholder="Search..." className="header-search" /> */}
-
-        <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
+        <Badge badgeContent={totalQuantity} color="secondary">
+          <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
+        </Badge>
       </div>
     </HeaderStyles>
   )

@@ -1,4 +1,6 @@
 import React from "react"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../../redux/slice/cartSlice"
 import {
   ProductItemContainer,
   ProductItemImage,
@@ -8,6 +10,10 @@ import {
 } from "./productsPageCardStyles"
 
 const ProductsPageCard = ({ product }) => {
+  const dispatch = useDispatch()
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
   return (
     <ProductItemContainer>
       <div className="">
@@ -23,7 +29,9 @@ const ProductsPageCard = ({ product }) => {
           ></Rating> */}
           <div className="add-cart">
             <ProductItemPrice>${product.price}</ProductItemPrice>
-            <div className="cart-bttn">Add to Cart</div>
+            <div className="cart-bttn" onClick={() => handleAddToCart(product)}>
+              Add to Cart
+            </div>
           </div>
         </ProductItemInfo>
       </div>

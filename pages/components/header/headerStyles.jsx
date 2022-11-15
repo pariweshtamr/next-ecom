@@ -94,21 +94,6 @@ export const HeaderStyles = styled.div`
     }
   }
 
-  .header-search {
-    width: 15rem;
-    outline: none;
-    border: none;
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.87);
-    @media screen and (max-width: 640px) {
-      display: none;
-    }
-    @media screen and (max-width: 856px) {
-      display: none;
-    }
-  }
-
   .header-cart {
     width: 1.5rem;
     height: 1.5rem;

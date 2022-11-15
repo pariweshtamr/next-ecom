@@ -7,6 +7,7 @@ import { ProductPageStyles } from "../../styles/ProductPageStyles"
 import Loader from "../components/loader/Loader"
 import MainLayout from "../components/mainLayout/MainLayout"
 import { motion } from "framer-motion"
+import { addToCart } from "../../redux/slice/cartSlice"
 
 const Product = () => {
   const dispatch = useDispatch()
@@ -19,6 +20,10 @@ const Product = () => {
   useEffect(() => {
     dispatch(fetchProductById(id))
   }, [dispatch, id])
+
+  const handleAddToCart = (selectedProduct) => {
+    dispatch(addToCart(selectedProduct))
+  }
   return (
     <MainLayout>
       {isLoading ? (
@@ -57,7 +62,10 @@ const Product = () => {
                 <h1 className="prod-price">
                   <i>${selectedProduct.price}</i>
                 </h1>
-                <button className="cart-bttn">
+                <button
+                  className="cart-bttn"
+                  onClick={() => handleAddToCart(selectedProduct)}
+                >
                   <i>Add to Cart</i>
                 </button>
               </div>

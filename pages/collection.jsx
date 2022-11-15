@@ -12,49 +12,62 @@ import { CollectionStyles } from "../styles/CollectionStyles.jsx"
 import Loader from "./components/loader/Loader"
 import MainLayout from "./components/mainLayout/MainLayout"
 import ProductsPageCard from "./components/productCard/productsPageCard"
+import ProductsList from "./components/productsList/ProductsList"
 
 const Collection = () => {
-  const [allProducts, setAllProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
+  const [prods, setProds] = useState([])
+  const [filters, setFilters] = useState({})
   const [shouldFetch, setShouldFetch] = useState(true)
+
   const dispatch = useDispatch()
 
-  const { isLoading, products } = useSelector((state) => state.product)
+  const handleFilters = (e) => {
+    const value = e.target.value
 
-  // const getProds = async () => {
-  //   let prods = []
-  //   try {
-  //     dispatch(requestPending())
-  //     const querySnapshot = await getDocs(collection(db, "products"))
-  //     querySnapshot.forEach((doc) => {
-  //       const { id } = doc
-  //       const data = { ...doc.data(), id }
-  //       prods.push(data)
-  //     })
-  //     setAllProducts(prods)
-  //     dispatch(getProductsSuccess(prods))
-  //   } catch (error) {
-  //     dispatch(requestFail(error))
-  //     console.log(error)
-  //   }
-  // }
-
-  useEffect(() => {
-    shouldFetch && dispatch(fetchAllProducts())
-    setShouldFetch(false)
-    setAllProducts(products)
-  }, [dispatch, setShouldFetch, products])
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    })
+  }
 
   return (
     <MainLayout>
       <CollectionStyles>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          allProducts?.map((product) => (
-            <ProductsPageCard key={product.id} product={product} />
-          ))
-        )}
+        <div className="products-list-container">
+          <div className="filter-container">
+            <div>
+              <h3>Filter Products:</h3>
+              <select name="type" onChange={handleFilters} defaultValue="type">
+                <option disabled value="type">
+                  TYPE
+                </option>
+                <option value="All">All</option>
+                <option value="indoor">Indoor</option>
+                <option value="outdoor">Outdoor</option>
+              </select>
+
+              <select name="size" onChange={handleFilters} defaultValue="">
+                <option disabled value="type">
+                  SIZE
+                </option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Search..."
+              className="collection-search"
+            />
+          </div>
+
+          <div className="products-list">
+            <ProductsList filters={filters} />
+          </div>
+        </div>
       </CollectionStyles>
     </MainLayout>
   )
