@@ -1,14 +1,10 @@
 import React from "react"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../../../redux/slice/cartSlice"
-import {
-  ProductItemContainer,
-  ProductItemImage,
-  ProductItemInfo,
-  ProductItemPrice,
-  ProductLink,
-} from "./productsPageCardStyles"
-
+import { ProductItemContainer } from "./productsPageCardStyles"
+import AddIcon from "@mui/icons-material/Add"
+import Link from "next/link"
+import { motion } from "framer-motion"
 const ProductsPageCard = ({ product }) => {
   const dispatch = useDispatch()
   const handleAddToCart = (product) => {
@@ -16,24 +12,26 @@ const ProductsPageCard = ({ product }) => {
   }
   return (
     <ProductItemContainer>
-      <div className="">
-        <ProductLink href={`/products/${product.id}`} passHref>
-          <ProductItemImage src={product.img} alt={product.name} />
-        </ProductLink>
-        <ProductItemInfo>
-          <h3>{product.detail}</h3>
-          <h2>{product.name}</h2>
-          {/* <Rating
-            rating={product.rating}
-            numReviews={product.numReviews}
-          ></Rating> */}
-          <div className="add-cart">
-            <ProductItemPrice>${product.price}</ProductItemPrice>
-            <div className="cart-bttn" onClick={() => handleAddToCart(product)}>
-              Add to Cart
-            </div>
-          </div>
-        </ProductItemInfo>
+      <div className="product-item">
+        <div className="product-img">
+          <Link href={`/products/${product.id}`}>
+            <img src={product.img} alt={product.name} />
+          </Link>
+        </div>
+        <div className="product-info">
+          <h2 className="product-name">{product.detail}</h2>
+          <span>{product.name}</span>
+        </div>
+
+        <div className="product-card-bottom">
+          <span className="price">${product.price}</span>
+          <motion.span
+            whileTap={{ scale: 1.2 }}
+            onClick={() => handleAddToCart(product)}
+          >
+            <AddIcon />
+          </motion.span>
+        </div>
       </div>
     </ProductItemContainer>
   )

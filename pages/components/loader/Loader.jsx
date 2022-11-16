@@ -6,7 +6,7 @@ const Loader = () => {
     <LoaderStyles>
       <div className="wrapper">
         <div className="loader">
-          <img src="/img/loader.gif" alt="Loading..." />
+          <img src="/img/spinner.jpg" alt="Loading..." />
         </div>
       </div>
     </LoaderStyles>,

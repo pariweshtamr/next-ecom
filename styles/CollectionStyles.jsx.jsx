@@ -18,7 +18,6 @@ export const CollectionStyles = styled.div`
 
       div {
         display: flex;
-        width: 100%;
         align-items: center;
         gap: 1rem;
         h3 {
@@ -28,13 +27,13 @@ export const CollectionStyles = styled.div`
 
         select {
           width: max-content;
-          height: fit-content;
-          display: flex;
           outline: none;
           border: none;
-          padding: 0.5rem;
-          border-radius: 20px;
+          padding: 0.5rem 2rem;
+          border-radius: 10px;
           cursor: pointer;
+          background: linear-gradient(#b91372, #6b0f1a);
+          color: #fff;
 
           &:focus {
             outline: none;
@@ -46,7 +45,7 @@ export const CollectionStyles = styled.div`
         width: 20%;
         outline: none;
         border: none;
-        border-radius: 50px;
+        border-radius: 10px;
         padding: 0.5rem 1rem;
         background: rgba(255, 255, 255, 0.87);
         @media screen and (max-width: 640px) {
@@ -56,11 +55,6 @@ export const CollectionStyles = styled.div`
           display: none;
         }
       }
-    }
-
-    .products-list {
-      display: flex;
-      justify-content: center;
     }
   }
 `

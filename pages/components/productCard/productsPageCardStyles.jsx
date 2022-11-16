@@ -2,24 +2,8 @@ import Link from "next/link"
 import styled from "styled-components"
 
 export const ProductItemContainer = styled.div`
-  padding: 1rem;
-  margin: 5px;
-  width: max-content;
-  height: 30rem;
-  border-radius: 20px;
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.87);
+  /* background: rgba(255, 255, 255, 0.87); */
   /* box-shadow: 0px 20px 24px 3px rgba(25, 135, 84, 0.42); */
-
-  &:hover {
-    background: #fff;
-  }
 
   @media screen and (max-width: 600px) {
     padding: 0;
@@ -29,56 +13,100 @@ export const ProductItemContainer = styled.div`
     padding: 0 15px;
     margin: 0;
   }
-`
-export const ProductItemImage = styled.img`
-  width: 18rem;
-  height: auto;
 
-  @media screen and (max-width: 600px) {
-    padding: 0 10px;
-  }
-`
-export const ProductItemInfo = styled.div`
-  margin-top: 1rem;
-  padding: 0 0.5rem;
-  > h2 {
-    font-size: 1rem;
-    color: #b91372;
-  }
-
-  .add-cart {
+  .product-item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
     justify-content: space-between;
-    .cart-bttn {
-      font-size: 1rem;
-      border: 1px solid #b91372;
-      background: #b91372;
-      width: max-content;
-      border-radius: 15px;
-      padding: 5px 15px;
-      cursor: pointer;
-      color: #fff;
+    padding: 1rem;
+    transition: all 0.5s ease-in-out;
+    border-radius: 20px;
 
-      &:hover {
-        background: linear-gradient(#b91372, #6b0f1a);
-        border: 1px solid #b91372;
+    &:hover {
+      .product-img {
+        img {
+          transform: scale(1.2);
+          transition: all 0.5s ease-in-out;
+        }
       }
     }
-  }
 
-  @media screen and (max-width: 600px) {
-    padding: 0 10px;
-  }
-`
-export const ProductItemPrice = styled.div`
-  font-size: 2rem;
-`
-export const ProductLink = styled(Link)`
-  text-decoration: none;
-  color: teal;
+    .product-img {
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
 
-  &:hover {
-    color: #000;
+      img {
+        transition: all 0.5s ease-in-out;
+        width: 16rem;
+        height: auto;
+
+        @media screen and (max-width: 600px) {
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .product-info {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+
+      @media screen and (max-width: 992px) {
+        font-size: 0.9rem;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 0.8rem;
+      }
+      h2 {
+        opacity: 0.87;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: -3px;
+      }
+      span {
+        opacity: 0.87;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+
+    .product-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .price {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      > :nth-child(2) {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          padding: 5px;
+          background: var(--main);
+          border-radius: 50px;
+          font-size: 2.2rem;
+          transition: all 0.5s ease-in-out;
+
+          @media screen and (max-width: 768px) {
+            font-size: 1rem;
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.87);
+            color: var(--main);
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
   }
 `

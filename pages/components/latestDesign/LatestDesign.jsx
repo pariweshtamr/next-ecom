@@ -1,8 +1,8 @@
-import { TryFitStyles } from "./tryFitStyles"
+import { LatestDesignStyles } from "./latestDesignStyles"
 import Image from "next/image"
-const TryFit = () => {
+const LatestDesign = () => {
   return (
-    <TryFitStyles>
+    <LatestDesignStyles>
       <div className="try-left">
         <span>Latest Designs</span>
         <span>The ultimate Nike Collection!</span>
@@ -21,8 +21,8 @@ const TryFit = () => {
           </video>
         </div>
       </div>
-    </TryFitStyles>
+    </LatestDesignStyles>
   )
 }
 
-export default TryFit
+export default LatestDesign

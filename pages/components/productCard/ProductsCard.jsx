@@ -1,8 +1,14 @@
 import Image from "next/image"
-import Link from "next/link"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../../redux/slice/cartSlice"
 import { ProductsCardStyles } from "./productsCardStyles"
 
 const ProductsCard = ({ prod }) => {
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
   return (
     <ProductsCardStyles>
       <div className="left-s">
@@ -12,7 +18,7 @@ const ProductsCard = ({ prod }) => {
         </div>
 
         <span>${prod.price}</span>
-        <div>Add to cart</div>
+        <div onClick={() => handleAddToCart(prod)}>Add to cart</div>
       </div>
       <Image
         src={prod.img}

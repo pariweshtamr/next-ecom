@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const TryFitStyles = styled.div`
+export const LatestDesignStyles = styled.div`
   margin: 6rem 0;
   padding: 2rem;
   display: flex;

@@ -99,7 +99,9 @@ const Header = () => {
           )}
         </ul>
         <Badge badgeContent={totalQuantity} color="secondary">
-          <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
+          <Link href="/cart" passHref>
+            <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
+          </Link>
         </Badge>
       </div>
     </HeaderStyles>

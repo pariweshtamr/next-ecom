@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ProductsStyles = styled.div`
+export const FeaturedProductsStyles = styled.div`
   padding: 0 2rem;
   position: relative;
   display: flex;
@@ -126,6 +126,7 @@ export const ProductsStyles = styled.div`
 
         > div {
           position: relative;
+
           .left-s {
             .name {
               > :nth-child(1) {
@@ -141,6 +142,7 @@ export const ProductsStyles = styled.div`
             top: 0rem;
             right: 0rem;
             transform: rotate(0);
+
             @media screen and (max-width: 856px) {
               width: 9rem;
             }

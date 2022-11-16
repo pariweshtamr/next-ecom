@@ -6,12 +6,12 @@ import Loader from "../loader/Loader"
 import ProductsPageCard from "../productCard/productsPageCard"
 import { ProductListStyles } from "./productListStyles"
 
-const ProductsList = ({ filters }) => {
+const ProductsList = ({ filters, searchTerm }) => {
   const [prods, setProds] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [shouldFetch, setShouldFetch] = useState(true)
   const dispatch = useDispatch()
-  const { type } = filters
+  const { search } = searchTerm
 
   const { isLoading, products } = useSelector((state) => state.product)
 
@@ -22,7 +22,7 @@ const ProductsList = ({ filters }) => {
   }, [dispatch, products])
 
   useEffect(() => {
-    if (type !== "All") {
+    if (filters?.type !== "All") {
       setFilteredProducts(
         prods.filter((product) =>
           Object.entries(filters).every(([key, value]) =>
@@ -34,16 +34,32 @@ const ProductsList = ({ filters }) => {
       setFilteredProducts(prods)
     }
   }, [prods, filters])
+
+  useEffect(() => {
+    if (searchTerm) {
+      setFilteredProducts(
+        prods.filter(
+          (product) =>
+            product.detail.toLowerCase().includes(search.toLowerCase()) ||
+            product.name.toLowerCase().includes(search.toLowerCase())
+        )
+      )
+    }
+  }, [searchTerm, prods])
   return (
     <ProductListStyles>
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          {filteredProducts?.map((product) => (
-            <ProductsPageCard key={product.id} product={product} />
-          ))}
-        </>
+        <div className="products-list">
+          {filteredProducts.length === 0 ? (
+            <h1 className="no-prods">No Products Found!</h1>
+          ) : (
+            filteredProducts?.map((product) => (
+              <ProductsPageCard key={product.id} product={product} />
+            ))
+          )}
+        </div>
       )}
     </ProductListStyles>
   )

@@ -1,12 +1,9 @@
-import { ProductsStyles } from "./productsStyles"
+import { FeaturedProductsStyles } from "./productsStyles"
 import Image from "next/image"
 import { ProductsData } from "../../../public/data/products"
 import { useEffect, useState } from "react"
 import ProductsCard from "../productCard/productsCard"
-import { db } from "../../../firebase/firebase-config"
-import { collection, getDocs } from "firebase/firestore"
 import { useDispatch, useSelector } from "react-redux"
-import { getProductsSuccess } from "../../../redux/slice/productSlice"
 import { fetchAllProducts } from "../../../redux/action/productAction"
 
 const FeaturedProducts = () => {
@@ -30,7 +27,7 @@ const FeaturedProducts = () => {
     }
   }
   return (
-    <ProductsStyles>
+    <FeaturedProductsStyles>
       <Image
         src="/img/plane.png"
         className="title-img"
@@ -55,7 +52,7 @@ const FeaturedProducts = () => {
           ))}
         </div>
       </div>
-    </ProductsStyles>
+    </FeaturedProductsStyles>
   )
 }
 
