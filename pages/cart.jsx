@@ -4,7 +4,7 @@ import { CartStyles } from "../styles/CartStyles"
 import { motion } from "framer-motion"
 import MainLayout from "./components/mainLayout/MainLayout"
 import Link from "next/link"
-import { Remove, Add } from "@mui/icons-material"
+import { Remove, Add, Delete } from "@mui/icons-material"
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart)
@@ -61,7 +61,12 @@ const Cart = () => {
                           </div>
 
                           <div className="cart-actions">
-                            <button className="remove-btn">REMOVE</button>
+                            <motion.button
+                              whileTap={{ scale: 1.2 }}
+                              className="remove-btn"
+                            >
+                              <Delete />
+                            </motion.button>
                           </div>
                         </div>
                       </div>

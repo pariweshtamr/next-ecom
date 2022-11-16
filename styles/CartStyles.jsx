@@ -30,10 +30,12 @@ export const CartStyles = styled.div`
       }
 
       .cart-top-btn {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
         font-weight: 600;
+        border: none;
+        border-radius: 50px;
         cursor: pointer;
-
+        background: rgba(255, 255, 255, 0.87);
         @media screen and (max-width: 600px) {
           padding: 5px;
           font-size: 13px;
@@ -147,16 +149,16 @@ export const CartStyles = styled.div`
               }
 
               .remove-btn {
-                max-height: 3rem;
-                padding: 10px;
-                border: 2px solid teal;
-                background-color: white;
+                padding: 15px;
+                border-radius: 50px;
+                color: #fff;
+                border: 2px solid var(--btn-bg);
+                background: var(--btn-bg);
                 cursor: pointer;
-                font-weight: 600;
-
-                &:hover {
-                  background-color: #f8f4f4;
+                svg {
+                  font-size: 2rem;
                 }
+
                 @media screen and (max-width: 600px) {
                   padding: 5px;
                   margin-left: 20px;
@@ -168,11 +170,12 @@ export const CartStyles = styled.div`
 
         .clear-cart-btn {
           width: 200px;
-          padding: 1rem;
+          padding: 1.2rem;
           background: var(--btn-bg);
           color: white;
           border: none;
-          border-radius: 5px;
+          border-radius: 50px;
+          letter-spacing: 1px;
 
           @media screen and (max-width: 600px) {
             padding: 10px;
@@ -213,11 +216,12 @@ export const CartStyles = styled.div`
 
         .cart-summary-btn {
           width: 100%;
-          padding: 1rem;
+          padding: 1.2rem;
           background: var(--btn-bg);
           color: #fff;
           border: none;
-          border-radius: 5px;
+          border-radius: 50px;
+          letter-spacing: 1px;
           @media screen and (max-width: 600px) {
             padding: 10px;
             font-size: 13px;

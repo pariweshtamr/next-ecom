@@ -98,5 +98,6 @@ export const HeaderStyles = styled.div`
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
+    margin-bottom: 16px;
   }
 `

@@ -12,6 +12,7 @@ import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
 import { logoutSuccess, setActiveUser } from "../../../redux/slice/authSlice"
 import { Badge } from "@mui/material"
+import { motion } from "framer-motion"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -98,11 +99,13 @@ const Header = () => {
             </>
           )}
         </ul>
-        <Badge badgeContent={totalQuantity} color="secondary">
-          <Link href="/cart" passHref>
-            <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
-          </Link>
-        </Badge>
+        <motion.div whileTap={{ scale: 1.2 }}>
+          <Badge badgeContent={totalQuantity} color="secondary">
+            <Link href="/cart" passHref>
+              <CgShoppingBag className="header-cart">Cart Icon</CgShoppingBag>
+            </Link>
+          </Badge>
+        </motion.div>
       </div>
     </HeaderStyles>
   )

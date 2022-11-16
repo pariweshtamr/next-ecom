@@ -37,6 +37,18 @@ const cartSlice = createSlice({
 
       localStorage.setItem("cartState", JSON.stringify(state))
     },
+
+    removeFromCart: (state, { payload }) => {
+      const updateCartItems = state.cartItems.filter(
+        (item) => item.id !== payload.id
+      )
+
+      state.cartItems = updateCartItems
+      localStorage.setItem("cartState", JSON.stringify(state.cartItems))
+      toast.error(`${payload.detail} has been removed to cart!`, {
+        position: "bottom-left",
+      })
+    },
   },
 })
 
