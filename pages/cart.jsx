@@ -4,10 +4,11 @@ import { CartStyles } from "../styles/CartStyles"
 import { motion } from "framer-motion"
 import MainLayout from "./components/mainLayout/MainLayout"
 import Link from "next/link"
+import { Remove, Add } from "@mui/icons-material"
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart)
-  console.log(cartItems)
+
   return (
     <>
       <Head>
@@ -18,7 +19,7 @@ const Cart = () => {
           <div className="cart-wrapper">
             <h1 className="cart-title">Your Cart</h1>
             <div className="cart-top">
-              <Link href="/products">
+              <Link href="/collection">
                 <button className="cart-top-btn">CONTINUE SHOPPING</button>
               </Link>
               <div className="cart-top-texts">
@@ -29,7 +30,7 @@ const Cart = () => {
             {cartItems.length === 0 ? (
               <>
                 <h1>Cart is Empty.</h1>
-                <Link href="/products">Go to Shop</Link>{" "}
+                <Link href="/collection">Go to Shop</Link>{" "}
               </>
             ) : (
               <div className="cart-bottom">
@@ -42,7 +43,6 @@ const Cart = () => {
 
                           <div className="product-description">
                             <div className="product-name">
-                              <b>Product:</b>
                               <Link href={`/products/${item.id}`}>
                                 {item.detail}
                               </Link>
@@ -50,7 +50,11 @@ const Cart = () => {
                           </div>
 
                           <div className="price-detail">
-                            <div className="product-qty-container"></div>
+                            <div className="product-qty-container">
+                              <Remove />
+                              <div className="product-qty">{item.quantity}</div>
+                              <Add />
+                            </div>
                             <div className="product-price">
                               ${item.price * item.quantity}
                             </div>
@@ -63,6 +67,8 @@ const Cart = () => {
                       </div>
                     </div>
                   ))}
+
+                  <hr className="cart-hr" />
 
                   <button className="clear-cart-btn">CLEAR CART</button>
                 </div>
