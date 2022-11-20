@@ -1,77 +1,49 @@
+import React from "react"
+import { Col, Row, Container } from "react-bootstrap"
+import Image from "next/image"
 import { HeroStyles } from "./HeroStyles"
-import { RiShoppingBagFill } from "react-icons/ri"
-import { BsArrowRight } from "react-icons/bs"
 import { motion } from "framer-motion"
-import Link from "next/link"
 
 const Hero = () => {
   const transition = { duration: 3, type: "spring", stiffness: 100 }
+
   return (
     <HeroStyles>
-      {/* Left side */}
-      <div className="hero-sides">
-        <span className="hero-text1">High quality Footwear</span>
+      <Row className="hero">
+        <Col md={6} className=" hero-left-col">
+          <div className="hero-left">
+            <div className="left-top">
+              <h6>Next Ecommerce Shop</h6>
+              <hr />
+            </div>
 
-        <div className="hero-text2">
-          <span>Trendy Collection</span>
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel,
-            ratione?
-          </span>
-        </div>
-      </div>
+            <div className="hero-banner">
+              <div className="hb-tag">
+                <h5>Best Ecommerce online shop</h5>
+              </div>
+              <div className="hb-main">
+                <div className="hero-banner-title">
+                  <h4 className="hb-h4">Catch Your Own</h4>
+                  <h4>Style & Look</h4>
+                </div>
 
-      {/* middle */}
-      <div className="hero-img-wrapper">
-        <motion.div
-          transition={transition}
-          initial={{ bottom: "2rem" }}
-          whileInView={{ bottom: "0" }}
-          className="circle"
-        ></motion.div>
+                <div className="hero-banner-p">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Perspiciatis, maxime sed temporibus reprehenderit facere in
+                    nihil corrupti laborum voluptatibus totam!
+                  </p>
+                </div>
 
-        <motion.img
-          transition={transition}
-          initial={{ bottom: "-2rem" }}
-          whileInView={{ bottom: "0" }}
-          src="/img/2.png"
-          alt="hero"
-          className="hero-img"
-        />
-
-        <motion.div
-          transition={transition}
-          initial={{ right: "4%" }}
-          whileInView={{ right: "2%" }}
-          className="hero-cart"
-        >
-          <div className="svg1">
-            <RiShoppingBagFill />
-          </div>
-
-          <Link href="/collection">
-            <div className="hero-signup">
-              <span>Our Collection!</span>
-              <div className="svg2">
-                <BsArrowRight />
+                <button>Discover Now</button>
               </div>
             </div>
-          </Link>
-        </motion.div>
-      </div>
-
-      {/* right-side */}
-      <div className="hero-sides">
-        <div className="hero-traffic">
-          <span>1.5m</span>
-          <span>Monthly Traffic</span>
+          </div>
+        </Col>
+        <div className="hero-right-col">
+          <Image src="/img/about-2.jpg" alt="logo" width="900" height="900" />
         </div>
-
-        <div className="hero-customers">
-          <span>100k</span>
-          <span>Happy Customers</span>
-        </div>
-      </div>
+      </Row>
     </HeroStyles>
   )
 }

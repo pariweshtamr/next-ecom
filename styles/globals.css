@@ -2,13 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Open Sans", Arial, sans-serif;
   background: var(--bg) !important;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 3ms ease;
-  color: white !important;
+  color: black !important;
   scroll-behavior: smooth;
 }
 
@@ -23,13 +24,14 @@ a {
 
 :root {
   --black: #343434;
-  /* --bg: #f8e367; */
-  --bg: #121212;
+  --bg: #fff;
+  /* --bg: #121212; */
   --main: #b91372;
   --shadow1: 0px 13px 48px -1px rgba(255, 0, 0, 0.25);
   --shadow2: 0px 13px 46px rgba(0, 0, 0, 0.13);
   --pink: #fe956f;
   --btn-bg: linear-gradient(#b91372, #6b0f1a);
+  --orange: #ffa45d;
 }
 
 .app {
@@ -38,7 +40,7 @@ a {
 }
 
 .main-container {
-  padding: 0 2rem;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {

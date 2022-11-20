@@ -20,11 +20,11 @@ export default function Home() {
         </Head>
         <MainLayout>
           <Hero />
-          <Slider />
+          {/* <Slider />
           <LatestDesign />
           <Services />
           <FeaturedProducts />
-          <Testimonials />
+          <Testimonials /> */}
         </MainLayout>
       </div>
     </>
