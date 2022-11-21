@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
 export const NavbarStyles = styled.div`
+  .nav-container {
+    padding: 0 4rem;
+  }
+
   .app-logo {
     display: flex;
     align-items: center;
@@ -15,5 +19,12 @@ export const NavbarStyles = styled.div`
     span {
       font-weight: 600;
     }
+  }
+
+  .nav-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
   }
 `

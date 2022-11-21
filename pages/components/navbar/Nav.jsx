@@ -6,8 +6,8 @@ import { NavbarStyles } from "./navbarStyles"
 const Navigation = () => {
   return (
     <NavbarStyles>
-      <Navbar bg="light" expand="lg" className="text-dark">
-        <Container className="px-5">
+      <Navbar expand="lg" className="text-dark">
+        <Container className="nav-container">
           <Navbar.Brand href="#home" className="app-logo">
             <Image src="/img/logo.png" alt="logo" width="100" height="100" />
             <Link href="/">
@@ -16,14 +16,14 @@ const Navigation = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex gap-3">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <NavDropdown title="Shop" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Shop</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Cart</NavDropdown.Item>
+            <Nav className="ms-auto nav-item">
+              <Nav.Link href="/">HOME</Nav.Link>
+              <NavDropdown title="SHOP" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">SHOP</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">CART</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#link">About</Nav.Link>
-              <Nav.Link href="#link">Contact</Nav.Link>
+              <Nav.Link href="#link">ABOUT</Nav.Link>
+              <Nav.Link href="#link">CONTACT</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

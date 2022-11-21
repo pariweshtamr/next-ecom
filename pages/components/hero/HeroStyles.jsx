@@ -292,11 +292,14 @@ export const HeroStyles = styled.div`
     display: flex;
     height: 100%;
     width: 100%;
+    margin-right: 0 !important;
+    --bs-gutter-x: 0;
 
     .hero-left-col {
       flex: 1;
       height: 100%;
-      padding-left: 16rem;
+      padding-left: 14rem;
+      margin-right: 1.3rem;
 
       .hero-left {
         display: flex;
@@ -332,10 +335,10 @@ export const HeroStyles = styled.div`
             h5 {
               writing-mode: vertical-rl;
               transform: rotate(180deg);
-              font-weight: 200;
+              font-weight: 00;
               text-transform: uppercase;
               letter-spacing: 3.8px;
-              font-size: 0.85rem;
+              font-size: 0.78rem;
             }
           }
 
@@ -353,7 +356,7 @@ export const HeroStyles = styled.div`
               }
               h4 {
                 font-size: 2.8rem;
-                font-weight: 900;
+                font-weight: 800;
               }
             }
 

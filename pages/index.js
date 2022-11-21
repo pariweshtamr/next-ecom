@@ -7,6 +7,7 @@ import Testimonials from "./components/testimonials/Testimonials"
 import LatestDesign from "./components/latestDesign/LatestDesign"
 import { ToastContainer } from "react-toastify"
 import Services from "./components/services/Services"
+import Info from "./components/info/Info"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         </Head>
         <MainLayout>
           <Hero />
+          <Info />
           {/* <Slider />
           <LatestDesign />
           <Services />
