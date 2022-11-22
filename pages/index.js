@@ -8,6 +8,7 @@ import LatestDesign from "./components/latestDesign/LatestDesign"
 import { ToastContainer } from "react-toastify"
 import Services from "./components/services/Services"
 import Info from "./components/info/Info"
+import BestSeller from "./components/best-sellers/BestSeller"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <MainLayout>
           <Hero />
           <Info />
+          <BestSeller />
           {/* <Slider />
           <LatestDesign />
           <Services />

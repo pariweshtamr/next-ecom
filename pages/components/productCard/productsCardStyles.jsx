@@ -1,15 +1,15 @@
 import styled from "styled-components"
 
 export const ProductsCardStyles = styled.div`
+  width: 16rem;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
+  flex-direction: column;
+  justify-content: center;
 
   .img-product {
-    transform: rotate(25deg);
-    width: 10rem;
-    height: auto;
+    flex: 2;
+    width: 100%;
+    height: 100%;
 
     @media screen and (min-width: 1801px) {
       width: 14rem;
@@ -17,41 +17,20 @@ export const ProductsCardStyles = styled.div`
     }
   }
 
-  .left-s {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    > :nth-child(2) {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    > :nth-child(3) {
-      font-size: 0.8rem;
-      border: 1px solid var(--black);
-      width: max-content;
-      border-radius: 15px;
-      padding: 5px 10px;
-      cursor: pointer;
+  .text {
+    flex: 1;
+    background: #fff;
 
-      &:hover {
-        background: linear-gradient(#b91372, #6b0f1a);
-        border: 1px solid #b91372;
-        color: #fff;
-      }
+    h3 {
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: gray;
     }
 
-    .name {
+    .text-bottom {
       display: flex;
-      flex-direction: column;
-
-      &:nth-child(1) {
-        font-size: 1.4rem;
-        font-weight: 600;
-      }
-      > :nth-child(2) {
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
+      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 `
