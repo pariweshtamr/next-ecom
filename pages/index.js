@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify"
 import Services from "./components/services/Services"
 import Info from "./components/info/Info"
 import BestSeller from "./components/best-sellers/BestSeller"
+import NewStock from "./components/new-stock/NewStock"
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
           <Hero />
           <Info />
           <BestSeller />
+          <NewStock />
           {/* <Slider />
           <LatestDesign />
           <Services />

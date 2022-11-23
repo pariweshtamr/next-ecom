@@ -5,7 +5,7 @@ import { HeroStyles } from "./HeroStyles"
 import { motion } from "framer-motion"
 
 const Hero = () => {
-  const transition = { duration: 3, type: "spring", stiffness: 100 }
+  const transition = { duration: 1, type: "spring" }
 
   return (
     <HeroStyles>
@@ -13,13 +13,29 @@ const Hero = () => {
         <Col md={6} className=" hero-left-col">
           <div className="hero-left">
             <div className="left-top">
-              <h6>Next Ecommerce Shop</h6>
+              <motion.h6
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2, type: "spring", delay: 1.8 }}
+              >
+                Next Ecommerce Shop
+              </motion.h6>
               <hr />
             </div>
 
             <div className="hero-banner">
               <div className="hb-tag">
-                <h5>Best Ecommerce online shop</h5>
+                <motion.h5
+                  initial={{ opacity: 0, x: "-5rem", rotate: 180 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 1,
+                    type: "spring",
+                    delay: 1,
+                  }}
+                >
+                  Best Ecommerce online shop
+                </motion.h5>
               </div>
               <div className="hb-main">
                 <div className="hero-banner-title">
@@ -35,13 +51,30 @@ const Hero = () => {
                   </p>
                 </div>
 
-                <button>Discover Now</button>
+                <motion.button
+                  whileTap={{ scale: 1.1 }}
+                  initial={{ opacity: 0, y: "5rem" }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 1,
+                    type: "spring",
+                    delay: 0.5,
+                  }}
+                >
+                  Discover Now
+                </motion.button>
               </div>
             </div>
           </div>
         </Col>
         <div className="hero-right-col">
-          <Image src="/img/about-2.jpg" alt="logo" width="900" height="900" />
+          <motion.img
+            initial={{ opacity: 0, x: "100%" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={transition}
+            src="/img/about-2.jpg"
+            alt="logo"
+          />
         </div>
       </Row>
     </HeroStyles>

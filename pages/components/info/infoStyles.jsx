@@ -37,7 +37,7 @@ export const InfoStyles = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2.8rem;
+            padding: 3.5rem;
 
             img {
               width: 100%;

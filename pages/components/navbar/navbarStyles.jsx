@@ -26,5 +26,12 @@ export const NavbarStyles = styled.div`
     gap: 1rem;
     font-size: 0.7rem;
     letter-spacing: 2px;
+    align-items: center;
+
+    .auth-section {
+      color: var(--orange);
+      display: flex;
+      gap: 1rem;
+    }
   }
 `

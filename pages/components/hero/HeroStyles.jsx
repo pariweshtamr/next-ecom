@@ -287,7 +287,7 @@ import styled from "styled-components"
 //   }
 // `
 export const HeroStyles = styled.div`
-  height: 100vh;
+  height: 100%;
   .hero {
     display: flex;
     height: 100%;
@@ -297,7 +297,6 @@ export const HeroStyles = styled.div`
 
     .hero-left-col {
       flex: 1;
-      height: 100%;
       padding-left: 14rem;
       margin-right: 1.3rem;
 
@@ -387,6 +386,7 @@ export const HeroStyles = styled.div`
       img {
         width: 100%;
         height: 100%;
+        max-height: 100%;
         object-fit: cover;
       }
     }

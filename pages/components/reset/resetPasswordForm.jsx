@@ -5,7 +5,6 @@ import { auth } from "../../../firebase/firebase-config"
 import { ResetPasswordFormStyles } from "./resetPasswordFormStyles"
 import { sendPasswordResetEmail } from "firebase/auth"
 import { toast } from "react-toastify"
-import { limitToLast } from "firebase/firestore"
 import Loader from "../loader/Loader"
 
 const ResetPasswordForm = () => {
