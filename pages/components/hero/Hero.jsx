@@ -1,6 +1,5 @@
 import React from "react"
 import { Col, Row, Container } from "react-bootstrap"
-import Image from "next/image"
 import { HeroStyles } from "./HeroStyles"
 import { motion } from "framer-motion"
 
@@ -10,17 +9,21 @@ const Hero = () => {
   return (
     <HeroStyles>
       <Row className="hero">
-        <Col md={6} className=" hero-left-col">
+        <Col md={12} sm={12} lg={6} className=" hero-left-col">
           <div className="hero-left">
             <div className="left-top">
               <motion.h6
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 2, type: "spring", delay: 1.8 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 2, delay: 2 }}
               >
                 Next Ecommerce Shop
               </motion.h6>
-              <hr />
+              <motion.hr
+                initial={{ opacity: 0, x: "-100%" }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2, type: "spring", delay: 1.5 }}
+              />
             </div>
 
             <div className="hero-banner">
@@ -45,9 +48,9 @@ const Hero = () => {
 
                 <div className="hero-banner-p">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Perspiciatis, maxime sed temporibus reprehenderit facere in
-                    nihil corrupti laborum voluptatibus totam!
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia. It is a paradisematic
+                    country.
                   </p>
                 </div>
 
@@ -67,15 +70,15 @@ const Hero = () => {
             </div>
           </div>
         </Col>
-        <div className="hero-right-col">
-          <motion.img
-            initial={{ opacity: 0, x: "100%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={transition}
-            src="/img/about-2.jpg"
-            alt="logo"
-          />
-        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: "100%" }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 1,
+          }}
+          className="hero-right-col"
+        ></motion.div>
       </Row>
     </HeroStyles>
   )

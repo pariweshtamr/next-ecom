@@ -3,17 +3,9 @@ import styled from "styled-components"
 export const FooterStyles = styled.footer`
   margin-top: 5rem;
   width: 100%;
-  padding-bottom: 1rem;
-  color: #fff;
+  padding: 1rem 0;
+  color: #000;
   opacity: 87%;
-
-  hr {
-    width: 100%;
-    height: 1px;
-    border: none;
-    background: #fff;
-    opacity: 87%;
-  }
 
   .footer-container {
     display: flex;

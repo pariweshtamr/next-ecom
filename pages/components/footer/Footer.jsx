@@ -9,12 +9,12 @@ import {
 } from "react-icons/hi"
 import { FiPhoneCall } from "react-icons/fi"
 import { MdOutlinePolicy } from "react-icons/md"
+import { Container } from "react-bootstrap"
 
 const Footer = () => {
   return (
-    <FooterStyles>
-      <hr />
-      <div className="footer-container">
+    <FooterStyles className="bg-light">
+      <Container className="footer-container">
         <div className="footer-logo">
           <Image
             src="/img/logo.png"
@@ -76,7 +76,7 @@ const Footer = () => {
             </span>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className="footer-end">
         <span>Copyright @2022 by Next Store, Inc.</span>

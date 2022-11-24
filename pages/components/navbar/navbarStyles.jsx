@@ -3,6 +3,10 @@ import styled from "styled-components"
 export const NavbarStyles = styled.div`
   .nav-container {
     padding: 0 4rem;
+
+    @media screen and (max-width: 992px) {
+      padding: 0 2rem;
+    }
   }
 
   .app-logo {

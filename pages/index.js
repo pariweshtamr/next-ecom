@@ -10,6 +10,8 @@ import Services from "./components/services/Services"
 import Info from "./components/info/Info"
 import BestSeller from "./components/best-sellers/BestSeller"
 import NewStock from "./components/new-stock/NewStock"
+import Subscribe from "./components/subscribe/Subscribe"
+import Footer from "./components/footer/Footer"
 
 export default function Home() {
   return (
@@ -26,11 +28,14 @@ export default function Home() {
           <Info />
           <BestSeller />
           <NewStock />
+          <Testimonials />
+          <hr />
+          <Subscribe />
+          <Footer />
           {/* <Slider />
           <LatestDesign />
           <Services />
-          <FeaturedProducts />
-          <Testimonials /> */}
+          <FeaturedProducts /> */}
         </MainLayout>
       </div>
     </>

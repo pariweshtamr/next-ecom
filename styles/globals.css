@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
   /* font-family: "Poppins", sans-serif; */
   font-family: "Open Sans", Arial, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.8;
+  color: gray;
   background: var(--bg) !important;
   height: 100%;
   background-size: cover;
@@ -41,6 +46,14 @@ a {
 
 .main-container {
   padding: 0;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .main-container {
+    padding: 0;
+    overflow-x: hidden;
+  }
 }
 
 /* ::-webkit-scrollbar {
