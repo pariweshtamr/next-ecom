@@ -7,20 +7,22 @@ export const FooterStyles = styled.footer`
   color: #000;
   opacity: 87%;
 
+  @media screen and (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
+
   .footer-container {
     display: flex;
     width: 100%;
     margin-top: 2rem;
     justify-content: space-around;
     @media screen and (max-width: 768px) {
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 2rem;
     }
-    @media screen and (max-width: 640px) {
-      justify-content: center;
-    }
+
     .footer-logo {
       display: flex;
       align-items: flex-start;
@@ -43,15 +45,24 @@ export const FooterStyles = styled.footer`
 
     .footer-block {
       max-width: 12rem;
+      @media screen and (max-width: 768px) {
+        max-width: 10rem;
+        text-align: center;
+      }
       .footer-details {
         display: flex;
         flex-direction: column;
         width: inherit;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         font-style: italic;
         gap: 1rem;
+
+        @media screen and (max-width: 768px) {
+          gap: 0.8rem;
+        }
+
         > :nth-child(1) {
-          font-weight: 500;
+          font-weight: 600;
           font-style: normal;
           font-size: 1.2rem;
         }

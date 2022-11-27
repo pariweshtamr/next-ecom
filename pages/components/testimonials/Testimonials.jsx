@@ -10,9 +10,9 @@ const Testimonials = () => {
     <TestimonialsStyles>
       <Container>
         <Row>
-          <Col md={12}>
+          <Col md={12} className="title">
             <h2 className="mb-4 text-center">Our satisfied customer says</h2>
-            <p className="text-center">
+            <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts. Separated
               they live in

@@ -86,8 +86,8 @@ export const CartStyles = styled.div`
             flex: 2;
 
             img {
-              width: 200px;
-              height: 200px;
+              width: 100px;
+              height: auto;
               @media screen and (max-width: 600px) {
                 width: 120px;
                 height: 120px;
@@ -99,7 +99,7 @@ export const CartStyles = styled.div`
               align-items: center;
               padding: 4rem;
               flex: 1;
-              font-size: 1.4rem;
+              font-size: 1rem;
               .product-name {
                 @media screen and (max-width: 600px) {
                   font-size: 12px;
@@ -152,8 +152,8 @@ export const CartStyles = styled.div`
                 padding: 15px;
                 border-radius: 50px;
                 color: #fff;
-                border: 2px solid var(--btn-bg);
-                background: var(--btn-bg);
+                border: 2px solid var(--orange);
+                background: var(--orange);
                 cursor: pointer;
                 svg {
                   font-size: 2rem;
@@ -171,8 +171,8 @@ export const CartStyles = styled.div`
         .clear-cart-btn {
           width: 200px;
           padding: 1.2rem;
-          background: var(--btn-bg);
-          color: white;
+          background: var(--orange);
+          color: var(--black);
           border: none;
           border-radius: 50px;
           letter-spacing: 1px;
@@ -217,8 +217,8 @@ export const CartStyles = styled.div`
         .cart-summary-btn {
           width: 100%;
           padding: 1.2rem;
-          background: var(--btn-bg);
-          color: #fff;
+          background: var(--orange);
+          color: var(--black);
           border: none;
           border-radius: 50px;
           letter-spacing: 1px;

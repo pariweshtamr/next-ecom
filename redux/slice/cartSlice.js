@@ -19,12 +19,12 @@ const cartSlice = createSlice({
       state.totalQuantity++
       if (!existingItem) {
         state.cartItems.push({ ...payload, quantity: 1 })
-        toast.success(`${payload.detail} has been added to cart!`, {
+        toast.success(`${payload.name} has been added to cart!`, {
           position: "bottom-left",
         })
       } else {
         existingItem.quantity++
-        toast.info(`Increased ${payload.detail} cart quantity!`, {
+        toast.info(`Increased ${payload.name} cart quantity!`, {
           position: "bottom-left",
         })
         existingItem.price =
@@ -45,7 +45,7 @@ const cartSlice = createSlice({
 
       state.cartItems = updateCartItems
       localStorage.setItem("cartState", JSON.stringify(state.cartItems))
-      toast.error(`${payload.detail} has been removed to cart!`, {
+      toast.error(`${payload.name} has been removed to cart!`, {
         position: "bottom-left",
       })
     },

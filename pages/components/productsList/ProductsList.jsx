@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { db } from "../../../firebase/firebase-config"
 import { fetchAllProducts } from "../../../redux/action/productAction"
 import Loader from "../loader/Loader"
-import ProductsPageCard from "../productCard/productsPageCard"
+import ProductsCard from "../productCard/ProductsCard"
 import { ProductListStyles } from "./productListStyles"
 
 const ProductsList = ({ filters, searchTerm }) => {
@@ -56,7 +55,7 @@ const ProductsList = ({ filters, searchTerm }) => {
             <h1 className="no-prods">No Products Found!</h1>
           ) : (
             filteredProducts?.map((product) => (
-              <ProductsPageCard key={product.id} product={product} />
+              <ProductsCard key={product.id} prod={product} />
             ))
           )}
         </div>

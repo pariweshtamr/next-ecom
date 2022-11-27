@@ -2,13 +2,24 @@ import styled from "styled-components"
 
 export const TestimonialsStyles = styled.section`
   padding: 8rem 0rem 0 0;
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     padding: 4rem 0;
+  }
+
+  .title {
+    p {
+      color: gray;
+      text-align: center;
+    }
   }
 
   .t-carousal {
     width: 100%;
     padding: 4rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 2rem 0;
+    }
 
     .t-swiper {
       padding: 2rem;

@@ -45,6 +45,7 @@ export const BestSellerStyles = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 2rem;
     }
   }
 `

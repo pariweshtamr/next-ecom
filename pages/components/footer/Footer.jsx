@@ -11,6 +11,16 @@ import { FiPhoneCall } from "react-icons/fi"
 import { MdOutlinePolicy } from "react-icons/md"
 import { Container } from "react-bootstrap"
 
+import {
+  Login,
+  Phone,
+  Email,
+  Place,
+  Info,
+  Policy,
+  Gavel,
+} from "@mui/icons-material"
+
 const Footer = () => {
   return (
     <FooterStyles className="bg-light">
@@ -29,15 +39,15 @@ const Footer = () => {
           <div className="footer-details">
             <span>Contact Us</span>
             <span className="icon-line">
-              <HiOutlineLocationMarker className="icon" />
+              <Place className="icon" />
               <span>123 George Street, Sydney, NSW 2000</span>
             </span>
             <span className="icon-line">
-              <FiPhoneCall className="icon" />
+              <Phone className="icon" />
               <span>02 999 9999</span>
             </span>
             <span className="icon-line">
-              <HiOutlineMail className="icon" />
+              <Email className="icon" />
               <span>nextnikestore@gmail.com</span>
             </span>
           </div>
@@ -47,7 +57,7 @@ const Footer = () => {
           <div className="footer-details">
             <span>Account</span>
             <span className="icon-line">
-              <HiOutlineLogin className="icon" />
+              <Login className="icon" />
               <span>Sign in</span>
             </span>
           </div>
@@ -57,7 +67,7 @@ const Footer = () => {
           <div className="footer-details">
             <span>Company</span>
             <span className="icon-line">
-              <HiOutlineUsers className="icon" />
+              <Info className="icon" />
               <span>About Us</span>
             </span>
           </div>
@@ -67,11 +77,11 @@ const Footer = () => {
           <div className="footer-details">
             <span>Resources</span>
             <span className="icon-line">
-              <HiOutlineLink className="icon" />
+              <Policy className="icon" />
               <span>Privacy Policy</span>
             </span>
             <span className="icon-line">
-              <MdOutlinePolicy className="icon" />
+              <Gavel className="icon" />
               <span>Terms & Conditions</span>
             </span>
           </div>

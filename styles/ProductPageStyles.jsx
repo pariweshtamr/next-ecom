@@ -1,26 +1,32 @@
 import styled from "styled-components"
 
 export const ProductPageStyles = styled.div`
-  width: 100%;
+  width: 100vw;
 
   .back-link {
     margin: 2rem;
-    color: #b91372;
+    color: var(--orange);
     &:hover {
-      color: #fff;
+      color: var(--black);
     }
   }
 
   .product-wrapper {
-    padding: 4rem 2rem 4rem 8rem;
+    padding: 4rem 2rem;
     display: flex;
+    flex-direction: row reverse;
     justify-content: space-between;
     align-items: flex-start;
     overflow: hidden;
+    width: 100%;
+    gap: 4rem;
 
     .info-container {
-      flex: 1.6;
-      padding: 0 18rem 0 0;
+      flex: 1;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
 
       .prod-title {
         display: flex;
@@ -31,6 +37,11 @@ export const ProductPageStyles = styled.div`
           font-weight: 200;
           font-size: 1.2rem;
         }
+      }
+
+      .prod-desc {
+        line-height: 1.8;
+        color: gray;
       }
       .action-block {
         display: flex;
@@ -44,27 +55,38 @@ export const ProductPageStyles = styled.div`
         }
 
         .cart-bttn {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           padding: 1rem 2rem;
           border-radius: 100px;
-          background: linear-gradient(#b91372, #6b0f1a);
+          background: var(--black);
           border: none;
           outline: none;
           color: #fff;
-          text-transform: uppercase;
+          margin-top: 1rem;
+          transition: all 0.5s ease;
+
           &:hover {
             cursor: pointer;
-            background: linear-gradient(#6b0f1a, #b91372);
+            background: var(--orange);
+            transition: all 0.5s ease;
+            color: var(--black);
           }
         }
+      }
+
+      .prod-size {
+        padding: 0.6rem;
+        width: max-content;
       }
     }
 
     .img-container {
-      flex: 1.8;
+      flex: 1;
+      width: 100%;
+      margin: 0 auto;
       img {
         width: 100%;
-        transform: rotate(35deg);
+        /* transform: rotate(35deg); */
       }
     }
   }

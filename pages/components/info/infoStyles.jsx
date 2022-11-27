@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const InfoStyles = styled.section`
+  overflow-x: hidden;
   .info-container {
     padding: 0 3rem;
 

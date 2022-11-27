@@ -5,10 +5,18 @@ export const SubscribeStyles = styled.section`
     font-size: 40px;
     font-weight: 600;
     line-height: 1.5;
+
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
   }
   .subscribe-form {
     width: 35%;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
     .form-group {
       position: relative;
       border: 1px solid black;

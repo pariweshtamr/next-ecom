@@ -1,10 +1,24 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import ProductsCard from "../productCard/productsCard"
 import { BestSellerStyles } from "./bestSellerStyles"
 import { motion } from "framer-motion"
+import { useDispatch, useSelector } from "react-redux"
+import Loader from "../loader/Loader"
+import { fetchAllProducts } from "../../../redux/action/productAction"
 
 const BestSeller = () => {
+  const dispatch = useDispatch()
+  const [prods, setProds] = useState([])
+  const [shouldFetch, setShouldFetch] = useState(true)
+  const { isLoading, products } = useSelector((state) => state.product)
+
+  useEffect(() => {
+    shouldFetch && dispatch(fetchAllProducts())
+    setShouldFetch(false)
+    setProds(products)
+  }, [dispatch, products])
+
   return (
     <BestSellerStyles className="bg-light">
       <Container>
@@ -31,38 +45,25 @@ const BestSeller = () => {
       </Container>
       <Container>
         <Row className="bp-row">
-          <motion.div
-            initial={{ opacity: 0, y: "2rem" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, type: "spring" }}
-            className="col-sm col-md-6 col-lg best-products"
-          >
-            <ProductsCard />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: "2rem" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, type: "spring" }}
-            className="col-md-6 col-sm col-lg best-products"
-          >
-            <ProductsCard />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: "2rem" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, type: "spring" }}
-            className="col-md-6 col-sm col-lg best-products"
-          >
-            <ProductsCard />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: "2rem" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, type: "spring" }}
-            className="col-md-6 col-sm col-lg best-products"
-          >
-            <ProductsCard />
-          </motion.div>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              {prods.length !== 0
+                ? prods.map((product) => (
+                    <motion.div
+                      initial={{ opacity: 0, y: "2rem" }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 2, type: "spring" }}
+                      className="col-sm col-md-6 col-lg best-products"
+                      key={product.id}
+                    >
+                      <ProductsCard prod={product} />
+                    </motion.div>
+                  ))
+                : ""}
+            </>
+          )}
         </Row>
       </Container>
     </BestSellerStyles>

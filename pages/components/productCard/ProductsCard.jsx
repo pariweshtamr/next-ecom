@@ -15,10 +15,10 @@ const ProductsCard = ({ prod }) => {
 
   return (
     <ProductsCardStyles>
-      <Link href="/">
+      <Link href={`/products/${prod.id}`}>
         <Image
-          src="/img/product-1.jpg"
-          alt="slider-product"
+          src={prod.img}
+          alt="product"
           className="img-product"
           width="800"
           height="800"
@@ -26,11 +26,11 @@ const ProductsCard = ({ prod }) => {
       </Link>
 
       <div className="text py-3 px-3">
-        <h3>Floral Jackquard Pullover</h3>
+        <h3>{prod.name}</h3>
 
         <div className="text-bottom">
           <div className="pricing">
-            <p className="price">$80.00</p>
+            <p className="price">${prod.price}</p>
           </div>
 
           <Rating
