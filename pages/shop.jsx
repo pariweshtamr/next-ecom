@@ -3,11 +3,11 @@ import Head from "next/head"
 import React, { useState } from "react"
 import { Container } from "react-bootstrap"
 
-import { CollectionStyles } from "../styles/CollectionStyles.jsx.jsx"
+import { ShopStyles } from "../styles/ShopStyles"
 import MainLayout from "./components/mainLayout/MainLayout"
 import ProductsList from "./components/productsList/ProductsList"
 
-const Collection = () => {
+const Shop = () => {
   const [filters, setFilters] = useState({})
   const [searchTerm, setSearchTerm] = useState("")
   const handleFilters = (e) => {
@@ -29,7 +29,7 @@ const Collection = () => {
         <title>Next-Store - Collection</title>
       </Head>
       <MainLayout>
-        <CollectionStyles>
+        <ShopStyles>
           <Container>
             <div className="products-list-container">
               <div className="filter-container">
@@ -77,10 +77,10 @@ const Collection = () => {
               </div>
             </div>
           </Container>
-        </CollectionStyles>
+        </ShopStyles>
       </MainLayout>
     </>
   )
 }
 
-export default Collection
+export default Shop

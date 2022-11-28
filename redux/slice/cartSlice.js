@@ -46,11 +46,9 @@ const cartSlice = createSlice({
       const updateCartItems = state.cartItems.filter(
         (item) => item.id !== payload.id
       )
-      const existingItem = state.cartItems.find(
-        (item) => item.id === payload.id
-      )
+
       state.cartItems = updateCartItems
-      state.totalQuantity = state.totalQuantity - existingItem.quantity
+      state.totalQuantity--
       localStorage.setItem("cartState", JSON.stringify(state.cartItems))
       toast.error(`${payload.name} has been removed to cart!`, {
         position: "bottom-left",
@@ -74,7 +72,7 @@ const cartSlice = createSlice({
 
       if (existingItem.quantity > 1) {
         existingItem.quantity -= 1
-        state.totalQuantity = state.totalQuantity - existingItem.quantity
+        state.totalQuantity--
 
         toast.info(`Decreased ${payload.name} cart quantity`, {
           position: "bottom-left",
@@ -85,7 +83,7 @@ const cartSlice = createSlice({
         )
 
         state.cartItems = updateCartItems
-        state.totalQuantity = state.totalQuantity - existingItem.quantity
+        state.totalQuantity--
 
         toast.error(`${payload.name} has been removed to cart!`, {
           position: "bottom-left",

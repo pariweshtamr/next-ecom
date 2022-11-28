@@ -8,10 +8,9 @@ const MainLayout = ({ children }) => {
   return (
     <MainLayoutStyles>
       <InfoBanner />
-      <Navigation />
-      {/* <Header /> */}
+      <Navigation style={{ position: "sticky", top: "0" }} />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </MainLayoutStyles>
   )
 }

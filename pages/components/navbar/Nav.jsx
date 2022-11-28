@@ -50,7 +50,7 @@ const Navigation = () => {
   }
   return (
     <NavbarStyles>
-      <Navbar expand="lg" className="text-dark">
+      <Navbar expand="lg" className="text-dark navbar">
         <Container className="nav-container">
           <div className="app-logo">
             <Image src="/img/logo.png" alt="logo" width="100" height="100" />

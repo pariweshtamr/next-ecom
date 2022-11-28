@@ -71,7 +71,7 @@ const Cart = () => {
 
                         <tbody>
                           {cartItems?.map((item) => (
-                            <tr className="text-center">
+                            <tr className="text-center" key={item.id}>
                               <td>
                                 <div className="cart-actions">
                                   <motion.button
