@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux"
 import { addToCart } from "../../../redux/slice/cartSlice"
 import { ProductsCardStyles } from "./productsCardStyles"
 import StarIcon from "@mui/icons-material/Star"
+import { IoIosCart } from "react-icons/io"
 
 const ProductsCard = ({ prod }) => {
   const dispatch = useDispatch()
@@ -15,15 +16,27 @@ const ProductsCard = ({ prod }) => {
 
   return (
     <ProductsCardStyles>
-      <Link href={`/products/${prod.id}`}>
-        <Image
-          src={prod.img}
-          alt="product"
-          className="img-product"
-          width="800"
-          height="800"
-        />
-      </Link>
+      <div className="top">
+        <Link href={`/products/${prod.id}`} className="top">
+          <Image
+            src={prod.img}
+            alt="product"
+            className="img-product"
+            width="800"
+            height="800"
+          />
+        </Link>
+
+        <div className="action-btn">
+          <button onClick={() => handleAddToCart(prod)}>Add to cart +</button>
+          <button>
+            Buy Now{" "}
+            <span>
+              <IoIosCart />
+            </span>
+          </button>
+        </div>
+      </div>
 
       <div className="text py-3 px-3">
         <h3>{prod.name}</h3>

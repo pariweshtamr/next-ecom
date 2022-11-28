@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const CollectionStyles = styled.div`
   width: 100%;
+  margin: 4rem 0;
 
   .products-list-container {
     padding: 0 2em;
@@ -13,27 +14,28 @@ export const CollectionStyles = styled.div`
     .filter-container {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
 
       div {
         display: flex;
         align-items: center;
         gap: 1rem;
-        h3 {
+        h5 {
           font-weight: 400;
           letter-spacing: 1px;
+          color: var(--black);
         }
 
         select {
-          width: max-content;
+          width: 7rem;
           outline: none;
-          border: none;
-          padding: 0.5rem 2rem;
+          border: 1px solid var(--black);
+          padding: 0.5rem 0.5rem;
           border-radius: 10px;
           cursor: pointer;
-          background: linear-gradient(#b91372, #6b0f1a);
-          color: #fff;
+          background: transparent;
+          color: var(--black);
 
           &:focus {
             outline: none;
@@ -44,8 +46,8 @@ export const CollectionStyles = styled.div`
       .collection-search {
         width: 20%;
         outline: none;
-        border: none;
-        border-radius: 10px;
+        border: 1px solid var(--black);
+        border-radius: 50px;
         padding: 0.5rem 1rem;
         background: rgba(255, 255, 255, 0.87);
         @media screen and (max-width: 640px) {

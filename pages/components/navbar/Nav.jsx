@@ -67,7 +67,7 @@ const Navigation = () => {
               <li>
                 <NavDropdown title="SHOP" id="basic-nav-dropdown">
                   <li>
-                    <Link href="/products">SHOP</Link>
+                    <Link href="/shop">SHOP</Link>
                   </li>
                   <li>
                     <Link href="/cart">CART</Link>

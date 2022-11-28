@@ -39,7 +39,7 @@ const ProductsList = ({ filters, searchTerm }) => {
       setFilteredProducts(
         prods.filter(
           (product) =>
-            product.detail.toLowerCase().includes(search.toLowerCase()) ||
+            product.name.toLowerCase().includes(search.toLowerCase()) ||
             product.name.toLowerCase().includes(search.toLowerCase())
         )
       )
