@@ -24,6 +24,10 @@ export const TestimonialsStyles = styled.section`
     .t-swiper {
       padding: 2rem;
 
+      .swiper-slide {
+        display: flex;
+      }
+
       .testimonial {
         display: flex;
         flex-direction: column;

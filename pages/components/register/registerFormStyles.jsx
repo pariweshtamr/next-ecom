@@ -1,16 +1,15 @@
 import styled from "styled-components"
 
 export const RegisterFormStyles = styled.div`
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem 0;
+  width: 100%;
+  height: 100%;
+  padding: 4rem 0;
   opacity: 87%;
 
   .form-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 28%;
+    width: 75%;
     margin: 0 auto;
     .app-logo {
       display: flex;
@@ -43,16 +42,16 @@ export const RegisterFormStyles = styled.div`
 
         label {
           font-size: 1rem;
-          color: #b91372;
+          color: var(--orange);
           border-radius: 5px;
           padding: 10px;
         }
 
         input {
-          padding: 1rem;
-          border-radius: 8px;
+          padding: 0.8rem 1rem;
+          border-radius: none;
           outline: none;
-          border: none;
+          border: 1px solid #dbd4d4;
           background: rgba(255, 255, 255, 0.87);
 
           ::placeholder {
@@ -74,7 +73,7 @@ export const RegisterFormStyles = styled.div`
         border-radius: 50px;
         border: none;
         outline: none;
-        background: linear-gradient(#b91372, #6b0f1a);
+        background: var(--orange);
         color: #fff;
         cursor: pointer;
         transition: 0.5s all ease;
@@ -100,7 +99,7 @@ export const RegisterFormStyles = styled.div`
     text-align: center;
     margin: 1rem 0;
     span {
-      color: #b91372;
+      color: var(--orange);
       text-decoration: underline;
     }
   }

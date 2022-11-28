@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const SubscribeStyles = styled.section`
+  margin-bottom: 5rem;
   h2 {
     font-size: 40px;
     font-weight: 600;

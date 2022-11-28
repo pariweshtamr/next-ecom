@@ -1,7 +1,11 @@
 import { TestimonialsStyles } from "./testimonialsStyles"
 import { Swiper, SwiperSlide } from "swiper/react"
+// Import Swiper styles
+import "swiper/css"
+import "swiper/css/pagination"
+import { Pagination, Autoplay } from "swiper"
 import { TestimonialsData } from "../../../public/data/testimonials"
-import { Carousel, Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import Image from "next/image"
 import { FaQuoteLeft } from "react-icons/fa"
 
@@ -26,13 +30,21 @@ const Testimonials = () => {
                 slidesPerView={3}
                 slidesPerGroup={1}
                 spaceBetween={20}
+                modules={[Pagination, Autoplay]}
+                pagination={{
+                  dynamicBullets: true,
+                }}
                 className="t-swiper"
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
                 breakpoints={{
                   1400: {
                     slidesPerView: 3,
                   },
                   856: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                   },
                   640: {
                     slidesPerView: 2,

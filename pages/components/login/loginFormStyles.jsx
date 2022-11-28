@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const LoginFormStyles = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 2rem 0;
   opacity: 87%;
   display: flex;
@@ -10,7 +10,7 @@ export const LoginFormStyles = styled.div`
   align-items: center;
 
   .login {
-    width: 28%;
+    width: 75%;
   }
 
   .form-container {
@@ -44,17 +44,21 @@ export const LoginFormStyles = styled.div`
 
         label {
           font-size: 1rem;
-          color: #b91372;
+          color: var(--orange);
           border-radius: 5px;
           padding: 10px;
         }
 
         input {
-          padding: 1rem;
-          border-radius: 8px;
+          padding: 0.8rem 1rem;
+          border-radius: none;
           outline: none;
-          border: none;
+          border: 1px solid #dbd4d4;
           background: rgba(255, 255, 255, 0.87);
+
+          &:focus {
+            border: 1px solid #000;
+          }
 
           ::placeholder {
             color: #9e9e9e;
@@ -75,7 +79,7 @@ export const LoginFormStyles = styled.div`
         border-radius: 50px;
         border: none;
         outline: none;
-        background: linear-gradient(#b91372, #6b0f1a);
+        background: var(--orange);
         color: #fff;
         transition: all 0.5s ease;
         cursor: pointer;
@@ -123,7 +127,7 @@ export const LoginFormStyles = styled.div`
     text-align: center;
     margin: 1rem 0;
     span {
-      color: #b91372;
+      color: var(--orange);
       text-decoration: underline;
     }
   }

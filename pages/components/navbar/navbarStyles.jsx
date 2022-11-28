@@ -1,13 +1,8 @@
 import styled from "styled-components"
 
 export const NavbarStyles = styled.div`
-  .navbar {
-    position: sticky !important;
-    top: 0;
-    z-index: 999;
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  }
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
   .nav-container {
     padding: 0 4rem;
 
