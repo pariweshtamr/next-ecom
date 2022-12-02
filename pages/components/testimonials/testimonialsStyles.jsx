@@ -24,8 +24,8 @@ export const TestimonialsStyles = styled.section`
     .t-swiper {
       padding: 2rem;
 
-      .swiper-slide {
-        display: flex;
+      .swiper-pagination-bullet-active {
+        background: #ffa45c;
       }
 
       .testimonial {

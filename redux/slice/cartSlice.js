@@ -36,7 +36,8 @@ const cartSlice = createSlice({
       }
 
       state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity)
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
       )
 
       localStorage.setItem("cartState", JSON.stringify(state))
@@ -49,6 +50,10 @@ const cartSlice = createSlice({
 
       state.cartItems = updateCartItems
       state.totalQuantity--
+      state.totalAmount = state.cartItems.reduce(
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
+      )
       localStorage.setItem("cartState", JSON.stringify(state.cartItems))
       toast.error(`${payload.name} has been removed to cart!`, {
         position: "bottom-left",
@@ -77,6 +82,10 @@ const cartSlice = createSlice({
         toast.info(`Decreased ${payload.name} cart quantity`, {
           position: "bottom-left",
         })
+        state.totalAmount = state.cartItems.reduce(
+          (total, item) => total + Number(item.price) * Number(item.quantity),
+          0
+        )
       } else if (existingItem.quantity === 1) {
         const updateCartItems = state.cartItems.filter(
           (item) => item.id !== payload.id
@@ -88,6 +97,10 @@ const cartSlice = createSlice({
         toast.error(`${payload.name} has been removed to cart!`, {
           position: "bottom-left",
         })
+        state.totalAmount = state.cartItems.reduce(
+          (total, item) => total + Number(item.price) * Number(item.quantity),
+          0
+        )
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
     },

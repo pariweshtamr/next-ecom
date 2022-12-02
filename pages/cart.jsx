@@ -11,11 +11,16 @@ import {
   decreaseProductQuantity,
   removeFromCart,
 } from "../redux/slice/cartSlice"
+import { loadStripe } from "@stripe/stripe-js"
+import axios from "axios"
+
+const stripePromise = loadStripe(process.env.stripe_public_key)
 
 const Cart = () => {
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart)
-  const { cartItems } = cart
+  const { cartItems, totalAmount, totalQuantity } = cart
+  const { userInfo } = useSelector((state) => state.auth)
 
   const removeFromCartHandler = (item) => {
     dispatch(removeFromCart(item))
@@ -27,6 +32,24 @@ const Cart = () => {
 
   const handleIncreaseQuantity = (item) => {
     dispatch(addToCart(item))
+  }
+
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise
+
+    //Call the backend to create a checkout session
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: cartItems,
+      email: userInfo.email,
+    })
+
+    // Redirect the customer to checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    })
+    console.log(result)
+
+    if (result.error) alert(result.error.message)
   }
 
   return (
@@ -171,29 +194,26 @@ const Cart = () => {
 
                       <div className="summary-item">
                         <div className="summary-item-text">
-                          Subtotal ({cartItems.totalQuantity}
-                          item(s)) :
+                          Subtotal ({totalQuantity} item(s)) :
                         </div>
-                        <div className="summary-item-price">
-                          ${cartItems.totalAmount}
-                        </div>
+                        <div className="summary-item-price">${totalAmount}</div>
                       </div>
 
                       <div className="summary-item">
                         <div className="summary-item-text">Shipping:</div>
-                        <div className="summary-item-price">
-                          ${cartItems.totalAmount}
-                        </div>
+                        <div className="summary-item-price">$10</div>
                       </div>
 
                       <div className="summary-item">
                         <div className="summary-item-text">Total</div>
-                        <div className="summary-item-price">
-                          ${cartItems.totalAmount}
-                        </div>
+                        <div className="summary-item-price">${totalAmount}</div>
                       </div>
 
-                      <button className="cart-summary-btn">
+                      <button
+                        className="cart-summary-btn"
+                        role="link"
+                        onClick={createCheckoutSession}
+                      >
                         PROCEED TO CHECKOUT
                       </button>
                     </div>

@@ -6,7 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth"
-import { auth } from "../../../firebase/firebase-config"
+import { auth, db } from "../../../firebase/firebase-config"
 import { toast } from "react-toastify"
 import Loader from "../loader/Loader"
 import { useRouter } from "next/router"
@@ -14,6 +14,7 @@ import Link from "next/link"
 import { FaGoogle } from "react-icons/fa"
 import { useDispatch } from "react-redux"
 import { loginSuccess } from "../../../redux/slice/authSlice"
+import { addDoc, collection, doc, setDoc } from "firebase/firestore"
 
 const LoginForm = () => {
   const [email, setEmail] = useState("")
@@ -55,13 +56,22 @@ const LoginForm = () => {
   const provider = new GoogleAuthProvider()
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
-      .then((result) => {
+      .then(async (result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result)
         const token = credential.accessToken
         // The signed-in user info.
         const user = result.user
+
         if (user.uid) {
+          const docRef = await setDoc(doc(db, "users", user.uid), {
+            uid: user.uid,
+            email: user.email,
+            name: user.displayName,
+            provider: user.providerData[0].providerId,
+            photoUrl: user.photoURL,
+          })
+
           toast.success("Login Successful")
           router.push("/")
         }

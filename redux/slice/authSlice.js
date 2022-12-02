@@ -31,7 +31,7 @@ const authSlice = createSlice({
       state.isLoading = false
     },
 
-    logoutSuccess: (state, { payload }) => {
+    logoutSuccess: (state) => {
       state.userInfo = {}
       state.isLoggedIn = false
       state.isLoading = false

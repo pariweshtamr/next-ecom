@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
-import ProductsCard from "../productCard/productsCard"
+import ProductsCard from "../productCard/ProductsCard"
 import { BestSellerStyles } from "./bestSellerStyles"
 import { motion } from "framer-motion"
 import { useDispatch, useSelector } from "react-redux"

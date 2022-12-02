@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { ContactStyles } from "../styles/ContactStyles"
 import MainLayout from "./components/mainLayout/MainLayout"
 
-const contact = () => {
+const Contact = () => {
   return (
     <MainLayout>
       <ContactStyles>
@@ -68,4 +68,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

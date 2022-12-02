@@ -44,8 +44,8 @@ const Shop = () => {
                       TYPE
                     </option>
                     <option value="All">All</option>
-                    <option value="indoor">Indoor</option>
-                    <option value="outdoor">Outdoor</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="shoes">Shoes</option>
                   </select>
 
                   <select

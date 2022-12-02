@@ -36,7 +36,7 @@ const NewStock = () => {
                 they live in Bookmarksgrove right at the coast of the Semantics,
                 a large language ocean.
               </p>
-              <Link href="/">
+              <Link href="/shop">
                 <button>Shop now</button>
               </Link>
             </motion.div>
@@ -62,7 +62,7 @@ const NewStock = () => {
                 they live in Bookmarksgrove right at the coast of the Semantics,
                 a large language ocean.
               </p>
-              <Link href="/">
+              <Link href="/shop">
                 <button>Shop now</button>
               </Link>
             </motion.div>
