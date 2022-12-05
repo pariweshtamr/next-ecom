@@ -3,7 +3,7 @@ import Stripe from "stripe"
 export default async (req, res) => {
   const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
-  const { items, email } = req.body
+  const { items, email, userId } = req.body
 
   const transformedItems = items.map((item) => ({
     quantity: item.quantity,
@@ -41,6 +41,7 @@ export default async (req, res) => {
     success_url: `${process.env.HOST}/success`,
     cancel_url: `${process.env.HOST}/checkout`,
     metadata: {
+      userId,
       email,
       images: JSON.stringify(items.map((item) => item.img)),
     },

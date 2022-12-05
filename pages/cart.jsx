@@ -39,6 +39,7 @@ const Cart = () => {
 
     //Call the backend to create a checkout session
     const checkoutSession = await axios.post("/api/create-checkout-session", {
+      userId: userInfo.userId,
       items: cartItems,
       email: userInfo.email,
     })
@@ -47,7 +48,6 @@ const Cart = () => {
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
     })
-    console.log(result)
 
     if (result.error) alert(result.error.message)
   }
