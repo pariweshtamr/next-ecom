@@ -40,4 +40,10 @@ export const NavbarStyles = styled.div`
       gap: 1rem;
     }
   }
+
+  .dropdown-item {
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
 `

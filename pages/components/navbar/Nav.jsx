@@ -66,10 +66,10 @@ const Navigation = () => {
               </li>
               <li>
                 <NavDropdown title="SHOP" id="basic-nav-dropdown">
-                  <li>
+                  <li className="dropdown-item">
                     <Link href="/shop">SHOP</Link>
                   </li>
-                  <li>
+                  <li className="dropdown-item">
                     <Link href="/cart">CART</Link>
                   </li>
                 </NavDropdown>
@@ -92,7 +92,22 @@ const Navigation = () => {
                 </div>
               ) : (
                 <div className="mx-5">
-                  <li>
+                  <NavDropdown
+                    title={` Hi, ${userInfo.username}`}
+                    id="basic-nav-dropdown"
+                  >
+                    <li className="dropdown-item">
+                      <Link href="/profile">My profile</Link>
+                    </li>
+                    <li
+                      onClick={logoutUser}
+                      className="logout-btn dropdown-item"
+                    >
+                      Sign out
+                    </li>
+                  </NavDropdown>
+
+                  {/* <li>
                     <FaUserCircle size={18} />{" "}
                     <span>Hi, {userInfo.username}</span>
                   </li>
@@ -101,7 +116,7 @@ const Navigation = () => {
                   </li>
                   <li onClick={logoutUser} className="logout-btn">
                     Sign out
-                  </li>
+                  </li> */}
                 </div>
               )}
 
